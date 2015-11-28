@@ -1,0 +1,67 @@
+﻿<!--- Podolsky Sergey KV-64 --->
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <title>24.8 Definite assignment</title>
+</head>
+
+<body>
+  <div class="refh">
+    <span class="refl"><a class="refp" href="24.7.html" target="_self" onclick="parent.menu.OnClickC(parent.menu.ch3_1, 'item_s');" onmouseover="this.className='refa';" onmouseout="this.className='refp';" language="Javascript1.2">&lt;&lt;Previous</a></span>
+    <a class="refp" href="24.9.html" target="_self" onclick="parent.menu.OnClickC(parent.menu.ch3_3, 'item_s');" onmouseover="this.className='refa';" onmouseout="this.className='refp';" language="Javascript1.2">Next&gt;&gt;</a>
+  </div>
+  
+  <div class="h1">24.8 Definite assignment</div>
+  
+  <div class="parag">
+	The definite assignment state of a parameter of an anonymous method is the same as for a parameter of a named method. That is, reference parameters and value parameters are initially definitely assigned and output parameters are initially unassigned. Furthermore, output parameters must be definitely assigned before the anonymous method returns normally (§5.1.6).
+  </div>
+  
+  <div class="parag">
+	The definite assignment state of an outer variable v on the control transfer to the block of an anonymous-method-expression is the same as the definite assignment state of v before the anonymous-method-expression. That is, definite assignment of outer variables is inherited from the context of the anonymous-method-expression. Within the block of an anonymous-method-expression, definite assignment evolves as in a normal block (§5.3.3).
+  </div>
+  
+  <div class="parag">
+	The definite assignment state of a variable v after an anonymous-method-expression is the same as its definite assignment state before the anonymous-method-expression.
+  </div>
+  
+  <div class="parag">
+	The example
+  </div>
+  
+  <pre class="codeblock">
+	delegate bool Filter(int i);
+	void F() {
+		int max;
+		// Error, max is not definitely assigned
+		Filter f = delegate(int n) { return n < max; }
+		max = 5;
+		DoWork(f);
+	}
+  </pre>
+  
+  <div class="parag">
+	generates a compile-time error since max is not definitely assigned where the anonymous method is declared. The example
+  </div>
+  
+  <pre class="codeblock">
+	delegate void D();
+	void F() {
+		int n;
+		D d = delegate { n = 1; };
+		d();
+		// Error, n is not definitely assigned
+		Console.WriteLine(n);
+	}
+  </pre>
+
+  <div class="parag">
+	also generates a compile-time error since the assignment to n in the anonymous method has no affect on the definite assignment state of n outside the anonymous method.
+  </div>
+ 
+  <div class="refh">
+    <span class="refl"><a class="refp" href="24.7.html" target="_self" onclick="parent.menu.OnClickC(parent.menu.ch3_1, 'item_s');" onmouseover="this.className='refa';" onmouseout="this.className='refp';" language="Javascript1.2">&lt;&lt;Previous</a></span>
+    <a class="refp" href="24.9.html" target="_self" onclick="parent.menu.OnClickC(parent.menu.ch3_3, 'item_s');" onmouseover="this.className='refa';" onmouseout="this.className='refp';" language="Javascript1.2">Next&gt;&gt;</a>
+  </div>
+</body>
+</html>

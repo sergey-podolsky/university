@@ -1,0 +1,107 @@
+﻿<!--- Podolsky Sergey KV-64 --->
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <title>24.9 Method group conversions</title>
+</head>
+
+<body>
+  <div class="refh">
+    <span class="refl"><a class="refp" href="24.8.html" target="_self" onclick="parent.menu.OnClickC(parent.menu.ch3_1, 'item_s');" onmouseover="this.className='refa';" onmouseout="this.className='refp';" language="Javascript1.2">&lt;&lt;Previous</a></span>
+    <a class="refp" href="24.10.html" target="_self" onclick="parent.menu.OnClickC(parent.menu.ch3_3, 'item_s');" onmouseover="this.className='refa';" onmouseout="this.className='refp';" language="Javascript1.2">Next&gt;&gt;</a>
+  </div>
+  
+  <div class="h1">24.9 Method group conversions</div>
+  
+  <div class="parag">
+	Similar to the implicit anonymous method conversions described in §21.3, an implicit conversion (§6.1) exists from a method group (§7.1) to a compatible delegate type. Given a delegate type D and an expression E that is classified as a method group, an implicit conversion exists from E to D if E contains at least one method that is applicable in its normal form (§7.4.2.1) to an argument list having types and modifiers matching the parameter types and modifiers of D.
+  </div>
+  
+  <div class="parag">
+	The compile-time application of a conversion from a method group E to a delegate type D is described in the following. Note that the existence of an implicit conversion from E to D does not guarantee that the compile-time application of the conversion will succeed without error.
+  </div>
+  
+  <ul class="disc">
+	<li>A single method M is selected corresponding to a method invocation (§20.9.7) of the form E(A), with the following modifications:</li>
+	<ul class="circle">
+		<li>The parameter types and modifiers (<a class="code">ref</a> or <a class="code">out</a>) of D are used as the argument types and modifiers of the argument list A.</li>
+		<li>The candidate methods considered are only those methods that are applicable in their normal form (§7.4.2.1), not those applicable only in their expanded form.</li>
+		<li>If the algorithm of §20.9.7 produces an error, then a compile-time error occurs. Otherwise the algorithm produces a single best method M having the same number of parameters as D.</li>
+	</ul>
+	<li>The selected method M must be consistent (as described below) with the delegate type D, or otherwise, a compile-time error occurs.</li>
+	<li>If the selected method M is an instance method, the instance expression associated with E determines the target object of the delegate.</li>
+	<li>The result of the conversion is a value of type D, namely a newly created delegate that refers to the selected method and target object.</li>
+  </ul>
+  
+  <div class="parag">
+	A method M is <b>consistent</b> with a delegate type D if all of the following are true:
+  </div>
+  
+  <ul class="disc">
+  	<li>D and M have the same number of parameters, and each parameter in D has the same modifiers as the corresponding parameter in M.</li>
+	<li>For each value parameter (a parameter with no ref or out modifier), an identity conversion (§6.1.1) or implicit reference conversion (§6.1.4) exists from the parameter type in D to the corresponding parameter type in M.</li>
+	<li>For each ref or out parameter, the parameter type in D is the same as the parameter type in M.</li>
+	<li>An identity or implicit reference conversion exists from the return type of M to the return type of D.</li>
+  </ul>
+  
+  <div class="parag">
+	The above rules of delegate consistency replace, and are more permissive than, the former rules of delegate compatibility described in §15.1.
+  </div>
+  
+  <div class="parag">
+	The following example demonstrates method group conversions:
+  </div>
+  
+  <pre class="codeblock">
+	delegate string D1(object o);
+	delegate object D2(string s);
+	delegate string D3(int i);
+	class Test
+	{
+		static string F(object o) {...}
+		static void G() {
+			D1 d1 = F;			// Ok
+			D2 d2 = F;			// Ok
+			D3 d3 = F;			// Error
+		}
+	}
+  </pre>
+  
+  <div class="parag">
+	The assignment to d1 implicitly converts the method group F to a value of type D1. Previously, it was necessary to write new D1(F) to produce the delegate value. While that is still permitted, it is no longer a requirement.
+  </div>
+  
+  <div class="parag">
+	The assignment to d2 shows how it is possible to delegate to a method that has less derived (contra-variant) parameter types and a more derived (covariant) return type. Intuitively, this is safe and has no cost because the references passed as parameter and return values are simply treated as references of less derived types.
+  </div>
+  
+  <div class="parag">
+	The assignment to d3 shows how parameter and return types of the delegate and method are allowed to differ only for reference types.
+  </div>
+
+  <div class="parag">
+	As with all other implicit and explicit conversions, the cast operator can be used to explicitly perform a method group conversion. Thus, the example
+  </div>
+  
+  <pre class="codeblock">
+	object obj = new EventHandler(myDialog.OkClick);
+  </pre>
+  
+  <div class="parag">
+	could instead be written
+  </div>
+
+  <pre class="codeblock">
+	object obj = (EventHandler)myDialog.OkClick;
+  </pre>
+
+  <div class="parag">
+	Method groups and anonymous method expressions may influence overload resolution, but do not participate in type inferencing. See §20.6.4 for further details.
+  </div>
+ 
+  <div class="refh">
+    <span class="refl"><a class="refp" href="24.8.html" target="_self" onclick="parent.menu.OnClickC(parent.menu.ch3_1, 'item_s');" onmouseover="this.className='refa';" onmouseout="this.className='refp';" language="Javascript1.2">&lt;&lt;Previous</a></span>
+    <a class="refp" href="24.10.html" target="_self" onclick="parent.menu.OnClickC(parent.menu.ch3_3, 'item_s');" onmouseover="this.className='refa';" onmouseout="this.className='refp';" language="Javascript1.2">Next&gt;&gt;</a>
+  </div>
+</body>
+</html>

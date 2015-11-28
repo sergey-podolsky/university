@@ -1,0 +1,54 @@
+﻿<!--- Podolsky Sergey KV-64 --->
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <title>24.6 Anonymous method evaluation</title>
+</head>
+
+<body>
+  <div class="refh">
+    <span class="refl"><a class="refp" href="24.5.2.html" target="_self" onclick="parent.menu.OnClickC(parent.menu.ch3_1, 'item_s');" onmouseover="this.className='refa';" onmouseout="this.className='refp';" language="Javascript1.2">&lt;&lt;Previous</a></span>
+    <a class="refp" href="24.7.html" target="_self" onclick="parent.menu.OnClickC(parent.menu.ch3_3, 'item_s');" onmouseover="this.className='refa';" onmouseout="this.className='refp';" language="Javascript1.2">Next&gt;&gt;</a>
+  </div>
+  
+  <div class="h1">24.6 Anonymous method evaluation</div>
+  
+  <div class="parag">
+	The run-time evaluation of an anonymous-method-expression produces a delegate instance which references the anonymous method and the (possibly empty) set of captured outer variables that are active at the time of the evaluation. When a delegate resulting from an anonymous-method-expression is invoked, the body of the anonymous method is executed. The code in the body is executed using the set of captured outer variables referenced by the delegate.
+  </div>
+  
+  <div class="parag">
+	The invocation list of a delegate produced from an anonymous-method-expression contains a single entry. The exact target object and target method of the delegate are unspecified. In particular, it is unspecified whether the target object of the delegate is null, the this value of the enclosing function member, or some other object.
+  </div>
+  
+  <div class="parag">
+	Evaluation of sematically identical anonymous-method-expressions with the same (possibly empty) set of captured outer variable instances is permitted (but not required) to return the same delegate instance. The term sematically identical is used here to mean that execution of the anonymous methods will, in all cases, produce the same effects given the same arguments. This rule permits code such as the following to be optimized.
+  </div>	
+  
+  <pre class="codeblock">
+	delegate double Function(double x);
+	class Test
+	{
+		static double[] Apply(double[] a, Function f) {
+			double[] result = new double[a.Length];
+			for (int i = 0; i < a.Length; i++) result[i] = f(a[i]);
+			return result;
+		}
+		static void F(double[] a, double[] b) {
+			a = Apply(a, delegate(double x) { return Math.Sin(x); });
+			b = Apply(b, delegate(double y) { return Math.Sin(y); });
+			...
+		}
+	}
+  </pre>
+  
+  <div class="parag">
+	Since the two anonymous method delegates have the same (empty) set of captured outer variables, and since the anonymous methods are semantically identical, the compiler is permitted to have the delegates refer to the same target method. Indeed, the compiler is permitted to return the very same delegate instance from both anonymous method expressions.
+  </div>
+    
+  <div class="refh">
+    <span class="refl"><a class="refp" href="24.5.2.html" target="_self" onclick="parent.menu.OnClickC(parent.menu.ch3_1, 'item_s');" onmouseover="this.className='refa';" onmouseout="this.className='refp';" language="Javascript1.2">&lt;&lt;Previous</a></span>
+    <a class="refp" href="24.7.html" target="_self" onclick="parent.menu.OnClickC(parent.menu.ch3_3, 'item_s');" onmouseover="this.className='refa';" onmouseout="this.className='refp';" language="Javascript1.2">Next&gt;&gt;</a>
+  </div>
+</body>
+</html>

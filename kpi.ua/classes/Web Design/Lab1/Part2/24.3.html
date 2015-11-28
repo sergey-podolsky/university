@@ -1,0 +1,84 @@
+﻿<!--- Podolsky Sergey KV-64 --->
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <title>24.3 Anonymous method conversions</title>
+</head>
+
+<body>
+  <div class="refh">
+    <span class="refl"><a class="refp" href="24.2.html" target="_self" onclick="parent.menu.OnClickC(parent.menu.ch3_1, 'item_s');" onmouseover="this.className='refa';" onmouseout="this.className='refp';" language="Javascript1.2">&lt;&lt;Previous</a></span>
+    <a class="refp" href="24.4.html" target="_self" onclick="parent.menu.OnClickC(parent.menu.ch3_3, 'item_s');" onmouseover="this.className='refa';" onmouseout="this.className='refp';" language="Javascript1.2">Next&gt;&gt;</a>
+  </div>
+  
+  <div class="h1">24.3 Anonymous method conversions</div>
+  
+  <div class="parag">
+	An anonymous-method-expression is classified as a value with no type. An anonymous-method-expression may be used in a delegate-creation-expression (§21.10). All other valid uses of an anonymous-method-expression depend on the implicit conversions defined here.
+  </div>
+    
+  <div class="parag">
+	An implicit conversion (§6.1) exists from an anonymous-method-expression to any compatible delegate type. If D is a delegate type, and A is an anonymous-method-expression, then D is compatible with A if and only if the following two conditions are met.
+  </div>
+  
+  <ul class="disc">
+	<li>First, the parameter types of D must be compatible with A:</li>
+	<ul class="circle">
+		<li>If A does not contain an anonymous-method-signature, then D may have zero or more parameters of any type, as long as no parameter of D has the out parameter modifier.</li>
+		<li>If A has an anonymous-method-signature, then D must have the same number of parameters, each parameter of A must be of the same type as the corresponding parameter of D, and the presence or absence of the ref or out modifier on each parameter of A must match the corresponding parameter of D. Whether the last parameter of D is a parameter-array is not relevant to the compatibility of A and D.</li>
+	</ul>
+	<li>Second, the return type of D must be compatible with A. For these rules, A is not considered to contain the block of any other anonymous methods.</li>
+	<ul class="circle">
+		<li>If D is declared with a void return type, then any return statement contained in A may not specify an expression.</li>
+		<li>If D is declared with a return type of R, then any return statement contained in A must specify an expression which is implicitly convertible (§6.1) to R. Furthermore, the end-point of the block of A must not be reachable.</li>
+	</ul>
+  </ul>
+  
+  <div class="parag">
+	Besides the implicit conversions to compatible delegate types, no other conversions exist from an anonymous-method-expression, even to the type object.
+  </div>
+  
+  <div class="parag">
+	The following examples illustrate these rules:
+  </div>
+  
+  <pre class="codeblock">
+	delegate void D(int x);
+	D d1 = delegate { };			// Ok
+	D d2 = delegate() { };			// Error, signature mismatch
+	D d3 = delegate(long x) { };		// Error, signature mismatch
+	D d4 = delegate(int x) { };		// Ok
+	D d5 = delegate(int x) { return; };	// Ok
+	D d6 = delegate(int x) { return x; };	// Error, return type mismatch
+	delegate void E(out int x);
+	E e1 = delegate { };			// Error, E has an out parameter
+	E e2 = delegate(out int x) { x = 1; };	// Ok
+	E e3 = delegate(ref int x) { x = 1; };	// Error, signature mismatch
+	delegate int P(params int[] a);
+	P p1 = delegate { };			// Error, end of block reachable
+	P p2 = delegate { return; };		// Error, return type mismatch
+	P p3 = delegate { return 1; };		// Ok
+	P p4 = delegate { return "Hello"; };	// Error, return type mismatch
+	P p5 = delegate(int[] a) {		// Ok
+		return a[0];
+	};
+	P p6 = delegate(params int[] a) {	// Error, params modifier
+		return a[0];
+	}; 
+	P p7 = delegate(int[] a) {		// Error, return type mismatch
+		if (a.Length > 0) return a[0];
+		return "Hello";
+	};
+	delegate object Q(params int[] a);
+	Q q1 = delegate(int[] a) {		// Ok
+		if (a.Length > 0) return a[0];
+		return "Hello";
+	};
+  </pre>
+	
+  <div class="refh">
+    <span class="refl"><a class="refp" href="24.2.html" target="_self" onclick="parent.menu.OnClickC(parent.menu.ch3_1, 'item_s');" onmouseover="this.className='refa';" onmouseout="this.className='refp';" language="Javascript1.2">&lt;&lt;Previous</a></span>
+    <a class="refp" href="24.4.html" target="_self" onclick="parent.menu.OnClickC(parent.menu.ch3_3, 'item_s');" onmouseover="this.className='refa';" onmouseout="this.className='refp';" language="Javascript1.2">Next&gt;&gt;</a>
+  </div>
+</body>
+</html>

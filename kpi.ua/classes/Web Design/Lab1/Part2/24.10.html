@@ -1,0 +1,35 @@
+﻿<!--- Podolsky Sergey KV-64 --->
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <title>24.10 Delegate creation expressions</title>
+</head>
+
+<body>
+  <div class="refh">
+    <span class="refl"><a class="refp" href="24.9.html" target="_self" onclick="parent.menu.OnClickC(parent.menu.ch3_1, 'item_s');" onmouseover="this.className='refa';" onmouseout="this.className='refp';" language="Javascript1.2">&lt;&lt;Previous</a></span>
+    <a class="refp" href="24.11.html" target="_self" onclick="parent.menu.OnClickC(parent.menu.ch3_3, 'item_s');" onmouseover="this.className='refa';" onmouseout="this.className='refp';" language="Javascript1.2">Next&gt;&gt;</a>
+  </div>
+  
+  <div class="h1">24.10 Delegate creation expressions</div>
+  
+  <div class="parag">
+	Delegate creation expressions (§7.5.10.3) are extended to permit the argument to be an expression classified as a method group, an expression classified as an anonymous method, or a value of a delegate type.
+  </div>
+  
+  <div class="parag">
+	The compile-time processing of a delegate-creation-expression of the form new D(E), where D is a delegate-type and E is an expression, consists of the following steps:
+  </div>
+  
+  <ul class="disc">
+	<li>If E is a method group, a method group conversion (§21.9) must exist from E to D, and the delegate creation expression is processed in the same way as that conversion.</li>
+	<li>If E is an anonymous method, an anonymous method conversion (§21.3) must exist from E to D, and the delegate creation expression is processed in the same way as that conversion.</li>
+	<li>If E is a value of a delegate type, the method signature of E must be consistent (§21.9) with D, and the result is a reference to a newly created delegate of type D that refers to the same invocation list as E. If E is not consistent with D, a compile-time error occurs.</li>
+  </ul>
+ 
+  <div class="refh">
+    <span class="refl"><a class="refp" href="24.9.html" target="_self" onclick="parent.menu.OnClickC(parent.menu.ch3_1, 'item_s');" onmouseover="this.className='refa';" onmouseout="this.className='refp';" language="Javascript1.2">&lt;&lt;Previous</a></span>
+    <a class="refp" href="24.11.html" target="_self" onclick="parent.menu.OnClickC(parent.menu.ch3_3, 'item_s');" onmouseover="this.className='refa';" onmouseout="this.className='refp';" language="Javascript1.2">Next&gt;&gt;</a>
+  </div>
+</body>
+</html>

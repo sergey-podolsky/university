@@ -1,0 +1,62 @@
+﻿<!--- Podolsky Sergey KV-64 --->
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <title>24.5.1 Captured outer variables</title>
+</head>
+
+<body>
+  <div class="refh">
+    <span class="refl"><a class="refp" href="24.5.html" target="_self" onclick="parent.menu.OnClickC(parent.menu.ch3_1, 'item_s');" onmouseover="this.className='refa';" onmouseout="this.className='refp';" language="Javascript1.2">&lt;&lt;Previous</a></span>
+    <a class="refp" href="24.5.2.html" target="_self" onclick="parent.menu.OnClickC(parent.menu.ch3_3, 'item_s');" onmouseover="this.className='refa';" onmouseout="this.className='refp';" language="Javascript1.2">Next&gt;&gt;</a>
+  </div>
+  
+  <div class="h1">24.5.1 Captured outer variables</div>
+  
+  <div class="parag">
+	When an outer variable is referenced by an anonymous method, the outer variable is said to have been <b>captured</b> by the anonymous method. Ordinarily, the lifetime of a local variable is limited to execution of the block or statement with which it is associated (§5.1.7). However, the lifetime of a captured outer variable is extended at least until the delegate referring to the anonymous method becomes eligible for garbage collection.
+  </div>
+    
+  <div class="parag">
+	In the example
+  </div>
+  
+  <pre class="codeblock">
+	using System;
+	delegate int D();
+	class Test
+	{
+		static D F() {
+			int x = 0;
+			D result = delegate { return ++x; }
+			return result;
+		}
+		static void Main() {
+			D d = F();
+			Console.WriteLine(d());
+			Console.WriteLine(d());
+			Console.WriteLine(d());
+		}
+	}
+  </pre>
+  
+  <div class="parag">
+	the local variable x is captured by the anonymous method, and the lifetime of x is extended at least until the delegate returned from F becomes eligible for garbage collection (which doesn’t happen until the very end of the program). Since each invocation of the anonymous method operates on the same instance of x, the output of the example is:
+  </div>
+  
+  <pre class="codeblock">
+	1
+	2
+	3
+  </pre>
+  
+  <div class="parag">
+	When a local variable or a value parameter is captured by an anonymous method, the local variable or parameter is no longer considered to be a fixed variable (§18.3), but is instead considered to be a moveable variable. Thus any unsafe code that takes the address of a captured outer variable must first use the fixed statement to fix the variable.
+  </div>
+  
+  <div class="refh">
+    <span class="refl"><a class="refp" href="24.5.html" target="_self" onclick="parent.menu.OnClickC(parent.menu.ch3_1, 'item_s');" onmouseover="this.className='refa';" onmouseout="this.className='refp';" language="Javascript1.2">&lt;&lt;Previous</a></span>
+    <a class="refp" href="24.5.2.html" target="_self" onclick="parent.menu.OnClickC(parent.menu.ch3_3, 'item_s');" onmouseover="this.className='refa';" onmouseout="this.className='refp';" language="Javascript1.2">Next&gt;&gt;</a>
+  </div>
+</body>
+</html>

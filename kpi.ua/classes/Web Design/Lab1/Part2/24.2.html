@@ -1,0 +1,32 @@
+﻿<!--- Podolsky Sergey KV-64 --->
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <title>24.2 Anonymous method signatures</title>
+</head>
+<body>
+  <div class="refh">
+    <span class="refl"><a class="refp" href="24.1.html" target="_self" onclick="parent.menu.OnClickC(parent.menu.ch3_1, 'item_s');" onmouseover="this.className='refa';" onmouseout="this.className='refp';" language="Javascript1.2">&lt;&lt;Previous</a></span>
+    <a class="refp" href="24.3.html" target="_self" onclick="parent.menu.OnClickC(parent.menu.ch3_3, 'item_s');" onmouseover="this.className='refa';" onmouseout="this.className='refp';" language="Javascript1.2">Next&gt;&gt;</a>
+  </div>
+  
+  <div class="h1">24.2 Anonymous method signatures</div>
+  
+  <div class="parag">
+	The optional anonymous-method-signature defines the names and types of the formal parameters for the anonymous method. The scope of the parameters of the anonymous method is the block. It is a compile-time error for the name of a parameter of the anonymous method to match the name of a local variable, local constant or parameter whose scope includes the anonymous-method-expression.
+  </div>
+  
+  <div class="parag">
+	If an anonymous-method-expression has an anonymous-method-signature, then the set of compatible delegate types is restricted to those that have the same parameter types and modifiers in the same order (§21.3). In contrast to method group conversions (§21.9), contra-variance of anonymous method parameter types is not supported. If an anonymous-method-expression doesn’t have an anonymous-method-signature, then the set of compatible delegate types is restricted to those that have no out parameters.
+  </div>
+
+  <div class="parag">
+	Note that an anonymous-method-signature cannot include attributes or a parameter array. Nevertheless, an anonymous-method-signature may be compatible with a delegate type whose parameter list contains a parameter array.
+  </div>
+    
+  <div class="refh">
+    <span class="refl"><a class="refp" href="24.1.html" target="_self" onclick="parent.menu.OnClickC(parent.menu.ch3_1, 'item_s');" onmouseover="this.className='refa';" onmouseout="this.className='refp';" language="Javascript1.2">&lt;&lt;Previous</a></span>
+    <a class="refp" href="24.3.html" target="_self" onclick="parent.menu.OnClickC(parent.menu.ch3_3, 'item_s');" onmouseover="this.className='refa';" onmouseout="this.className='refp';" language="Javascript1.2">Next&gt;&gt;</a>
+  </div>
+</body>
+</html>

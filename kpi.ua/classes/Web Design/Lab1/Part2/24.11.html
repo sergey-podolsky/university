@@ -1,0 +1,195 @@
+﻿<!--- Podolsky Sergey KV-64 --->
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <title>24.11 Implementation example</title>
+</head>
+
+<body>
+  <div class="refh">
+    <span class="refl"><a class="refp" href="24.10.html" target="_self" onclick="parent.menu.OnClickC(parent.menu.ch3_1, 'item_s');" onmouseover="this.className='refa';" onmouseout="this.className='refp';" language="Javascript1.2">&lt;&lt;Previous</a></span>
+  </div>
+  
+  <div class="h1">24.11 Implementation example</div>
+  
+  <div class="parag">
+	This section describes a possible implementation of anonymous methods in terms of standard C# constructs. The implementation described here is based on the same principles used by the Microsoft C# compiler, but it is by no means a mandated implementation, nor is it the only one possible.
+  </div>
+    
+  <div class="parag">
+	The remainder of this section gives several examples of code that contains anonymous methods with different characteristics. For each example, a corresponding translation to code that uses only standard C# constructs is provided. In the examples, the identifier D is assumed by represent the following delegate type:
+  </div>
+  
+  <pre class="codeblock">
+	public delegate void D();
+  </pre>
+  
+  <div class="parag">
+	The simplest form of an anonymous method is one that captures no outer variables:
+  </div>
+
+  <pre class="codeblock">
+	class Test
+	{
+		static void F() {
+			D d = delegate { Console.WriteLine("test"); };
+		}
+	}
+  </pre>  
+
+  <div class="parag">
+	This can be translated to a delegate instantiation that references a compiler generated static method in which the code of the anonymous method is placed:
+  </div>
+
+  <pre class="codeblock">
+	class Test
+	{
+		static void F() {
+			D d = new D(__Method1);
+		}
+		static void __Method1() {
+			Console.WriteLine("test");
+		}
+	}
+  </pre>  
+  
+  <div class="parag">
+	This can be translated to a delegate instantiation that references a compiler generated static method in which the code of the anonymous method is placed:
+  </div>
+
+  <pre class="codeblock">
+	class Test
+	{
+		static void F() {
+			D d = new D(__Method1);
+		}
+		static void __Method1() {
+			Console.WriteLine("test");
+		}
+	}
+  </pre>  
+  
+  <div class="parag">
+	In the following example, the anonymous method references instance members of this:
+  </div>
+
+  <pre class="codeblock">
+	class Test
+	{
+		int x;
+		void F() {
+			D d = delegate { Console.WriteLine(x); };
+		}
+	}
+  </pre>  
+  
+  <div class="parag">
+	This can be translated to a compiler generated instance method containing the code of the anonymous method:
+  </div>
+
+  <pre class="codeblock">
+	class Test
+	{
+		int x;
+		void F() {
+			D d = new D(__Method1);
+		}
+		void __Method1() {
+			Console.WriteLine(x);
+		}
+	}
+  </pre>  
+  
+  <div class="parag">
+	In this example, the anonymous method captures a local variable:
+  </div>
+
+  <pre class="codeblock">
+	class Test
+	{
+		void F() {
+			int y = 123;
+			D d = delegate { Console.WriteLine(y); };
+		}
+	}
+  </pre>  
+  
+  <div class="parag">
+	The lifetime of the local variable must now be extended to at least the lifetime of the anonymous method delegate. This can be achieved by “lifting” the local variable into a field of a compiler generated class. Instantiation of the local variable (§21.5.2) then corresponds to creating an instance of the compiler generated class, and accessing the local variable corresponds to accessing a field in the instance of the compiler generated class. Furthermore, the anonymous method becomes an instance method of the compiler generated class:
+  </div>
+
+  <pre class="codeblock">
+	class Test
+	{
+		void F() {
+			__Locals1 __locals1 = new __Locals1();
+			__locals1.y = 123;
+			D d = new D(__locals1.__Method1);
+		}
+		class __Locals1
+		{
+			public int y;
+			public void __Method1() {
+				Console.WriteLine(y);
+			}
+		}
+	}
+  </pre>  
+  
+  <div class="parag">
+	Finally, the following anonymous method captures this as well as two local variables with different lifetimes:
+  </div>
+
+  <pre class="codeblock">
+	class Test
+	{
+		int x;
+		void F() {
+			int y = 123;
+			for (int i = 0; i < 10; i++) {
+				int z = i * 2;
+				D d = delegate { Console.WriteLine(x + y + z); };
+			}
+		}
+	}
+  </pre>  
+  
+  <div class="parag">
+	Here, a compiler generated class is created for each statement block in which locals are captured such that the locals in the different blocks can have independent lifetimes. An instance of <a class="code">__Locals2</a>, the compiler generated class for the inner statement block, contains the local variable z and a field that references an instance of <a class="code">__Locals1</a>.  An instance of <a class="code">__Locals1</a>, the compiler generated class for the outer statement block, contains the local variable y and a field that references this of the enclosing function member. With these data structures it is possible to reach all captured outer variables through an instance of <a class="code">__Local2</a>, and the code of the anonymous method can thus be implemented as an instance method of that class.	
+  </div>
+
+  <pre class="codeblock">
+	class Test
+	{
+		void F() {
+			__Locals1 __locals1 = new __Locals1();
+			__locals1.__this = this;
+			__locals1.y = 123;
+			for (int i = 0; i < 10; i++) {
+				__Locals2 __locals2 = new __Locals2();
+				__locals2.__locals1 = __locals1;
+				__locals2.z = i * 2;
+				D d = new D(__locals2.__Method1);
+			}
+		}
+		class __Locals1
+		{
+			public Test __this;
+			public int y;
+		}
+		class __Locals2
+		{
+			public __Locals1 __locals1;
+			public int z;
+			public void __Method1() {
+				Console.WriteLine(__locals1.__this.x + __locals1.y + z);
+			}
+		}
+	}
+  </pre>  
+  
+  <div class="refh">
+    <span class="refl"><a class="refp" href="24.10.html" target="_self" onclick="parent.menu.OnClickC(parent.menu.ch3_1, 'item_s');" onmouseover="this.className='refa';" onmouseout="this.className='refp';" language="Javascript1.2">&lt;&lt;Previous</a></span>
+  </div>
+</body>
+</html>

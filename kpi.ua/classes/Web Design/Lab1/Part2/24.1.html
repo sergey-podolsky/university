@@ -1,0 +1,48 @@
+﻿<!--- Podolsky Sergey KV-64 --->
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <title>24.1 Anonymous method expressions</title>
+</head>
+
+<body>
+  <div class="refh">
+    <a class="refp" href="24.2.html" onclick="parent.menu.OnClickC(parent.menu.ch3_1, 'item_s');" onmouseover="this.className='refa';" onmouseout="this.className='refp';" language="Javascript1.2">Next&gt;&gt;</a>
+  </div>
+  
+  <div class="h1">
+	24.1 Anonymous method expressions
+  </div>
+  
+  <div class="parag">
+	An anonymous-method-expression defines an anonymous method and evaluates to a special value referencing the method:
+  </div>
+  
+  
+  <pre >
+	<i>
+	primary-no-array-creation-expression:
+		…
+		anonymous-method-expression
+	anonymous-method-expression:
+		</i>delegate<i>   anonymous-method-signature<sub>opt</sub>   block
+	anonymous-method-signature:
+		(   anonymous-method-parameter-listopt   )
+	anonymous-method-parameter-list:
+		anonymous-method-parameter
+		anonymous-method-parameter-list   ,   anonymous-method-parameter
+	anonymous-method-parameter:
+		parameter-modifieropt   type   identifier
+	</i>
+  </pre>
+  
+  <div class="parag">
+	An anonymous-method-expression is classified as a value with special conversion rules (§21.3). The value does not have a type but can be implicitly converted to a compatible delegate type.
+	The anonymous-method-expression defines a new declaration space for parameters, locals and constants and a new declaration space for labels (§3.3).
+  </div>
+  
+  <div class="refh">
+    <a class="refp" href="24.2.html" onclick="parent.menu.OnClickC(parent.menu.ch3_1, 'item_s');" onmouseover="this.className='refa';" onmouseout="this.className='refp';" language="Javascript1.2">Next&gt;&gt;</a>
+  </div>
+</body>
+</html>

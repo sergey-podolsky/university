@@ -1,0 +1,172 @@
+﻿<!--- Podolsky Sergey KV-64 --->
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <title>24.5.2 Instantiation of local variables</title>
+</head>
+
+<body>
+  <div class="refh">
+    <span class="refl"><a class="refp" href="24.5.1.html" target="_self" onclick="parent.menu.OnClickC(parent.menu.ch3_1, 'item_s');" onmouseover="this.className='refa';" onmouseout="this.className='refp';" language="Javascript1.2">&lt;&lt;Previous</a></span>
+    <a class="refp" href="24.6.html" target="_self" onclick="parent.menu.OnClickC(parent.menu.ch3_3, 'item_s');" onmouseover="this.className='refa';" onmouseout="this.className='refp';" language="Javascript1.2">Next&gt;&gt;</a>
+  </div>
+  
+  <div class="h1">24.5.2 Instantiation of local variables</div>
+  
+  <div class="parag">
+	A local variable is considered to be instantiated when execution enters the scope of the variable. For example, when the following method is invoked, the local variable x is instantiated and initialized three times—once for each iteration of the loop.
+  </div>
+  
+  <pre class="codeblock">
+	static void F() {
+		for (int i = 0; i < 3; i++) {
+			int x = i * 2 + 1;
+			...
+		}
+	}
+  </pre>
+  
+  <div class="parag">
+	However, moving the declaration of x outside the loop results in a single instantiation of x:
+  </div>
+  
+  <pre class="codeblock">
+	static void F() {
+		int x;
+		for (int i = 0; i < 3; i++) {
+			x = i * 2 + 1;
+			...
+		}
+	}
+  </pre>
+  
+  <div class="parag">
+	Ordinarily, there is no way to observe exactly how often a local variable is instantiated—because the lifetimes of the instantiations are disjoint, it is possible for each instantation to simply use the same storage location. However, when an anonymous method captures a local variable, the effects of instantiation become apparent.
+  </div>
+  
+  <div class="parag">
+	The example
+  </div>
+  
+  <pre class="codeblock">
+	using System;
+	delegate void D();
+	class Test
+	{
+		static D[] F() {
+			D[] result = new D[3];
+			for (int i = 0; i < 3; i++) {
+				int x = i * 2 + 1;
+				result[i] = delegate { Console.WriteLine(x); };
+			}
+			return result;
+		}
+		static void Main() {
+			foreach (D d in F()) d();
+		}
+	}
+  </pre>
+  
+  <div class="parag">
+	produces the output:
+  </div>
+  
+  <pre class="codeblock">
+	1
+	3
+	5
+  </pre>
+  
+  <div class="parag">
+	However, when the declaration of x is moved outside the loop:
+  </div>
+  
+  <pre class="codeblock">
+	static D[] F() {
+		D[] result = new D[3];
+		int x;
+		for (int i = 0; i < 3; i++) {
+			x = i * 2 + 1;
+			result[i] = delegate { Console.WriteLine(x); };
+		}
+		return result;
+	}
+  </pre>
+  
+  <div class="parag">
+	the output is:
+  </div>
+  
+  <pre class="codeblock">
+	5
+	5
+	5
+  </pre>
+  
+  <div class="parag">
+	Note that the three delegates created in the version of F directly above will be equal according to the equality operator (§21.7). Furthermore, note that the compiler is permitted (but not required) to optimize the three instantiations into a single delegate instance (§21.6).
+  </div>
+
+  <div class="parag">
+	It is possible for anonymous method delegates to share some captured variables yet have separate instances of others. For example, if F is changed to
+  </div>
+  
+  <pre class="codeblock">
+	static D[] F() {
+		D[] result = new D[3];
+		int x = 0;
+		for (int i = 0; i < 3; i++) {
+			int y = 0;
+			result[i] = delegate { Console.WriteLine("{0} {1}", ++x, ++y); };
+		}
+		return result;
+	}
+  </pre>
+  
+  <div class="parag">
+	the three delegates capture the same instance of x but separate instances of y, and the output is:
+  </div>
+  
+  <pre class="codeblock">
+	1 1
+	2 1
+	3 1
+  </pre>
+  
+  <div class="parag">
+	Separate anonymous methods can capture the same instance of an outer variable. In the example:
+  </div>
+  
+  <pre class="codeblock">
+	using System;
+	delegate void Setter(int value);
+	delegate int Getter();
+	class Test
+	{
+		static void Main() {
+			int x = 0;
+			Setter s = delegate(int value) { x = value; };
+			Getter g = delegate { return x; };
+			s(5);
+			Console.WriteLine(g());
+			s(10);
+			Console.WriteLine(g());
+		}
+	}
+  </pre>
+  
+  <div class="parag">
+	the two anonymous methods capture the same instance of the local variable x, and they can thus “communicate” through that variable. The output of the example is:
+  </div>
+  
+  <pre class="codeblock">
+	5
+	10
+  </pre>
+  
+  <div class="refh">
+    <span class="refl"><a class="refp" href="24.5.1.html" target="_self" onclick="parent.menu.OnClickC(parent.menu.ch3_1, 'item_s');" onmouseover="this.className='refa';" onmouseout="this.className='refp';" language="Javascript1.2">&lt;&lt;Previous</a></span>
+    <a class="refp" href="24.6.html" target="_self" onclick="parent.menu.OnClickC(parent.menu.ch3_3, 'item_s');" onmouseover="this.className='refa';" onmouseout="this.className='refp';" language="Javascript1.2">Next&gt;&gt;</a>
+  </div>
+</body>
+</html>

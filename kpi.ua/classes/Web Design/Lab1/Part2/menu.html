@@ -1,0 +1,100 @@
+﻿<!--- Podolsky Sergey KV-64 --->
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="menu.css">
+	<title>Menu</title>
+	<script language="javascript">
+      selected = null;
+      function OnMouseOver(obj, aclass)
+      {
+        if (obj != selected)
+        {
+          obj.pclass = obj.className;
+          obj.className = aclass;
+        }
+      }
+      function OnMouseOut(obj)
+      {
+        if (obj != selected)
+        {
+          obj.className = obj.pclass;
+        }
+      }
+      function OnClick(obj, sclass)
+      {
+        if (selected == obj) return;
+        if (selected != null)
+        {
+          selected.className = selected.pclass;
+        }
+        selected = obj;
+        obj.className = sclass;
+      }
+      
+      function OnClickC(obj, sclass)
+      {
+        if (selected == obj) return;
+        if (selected != null)
+        {
+          selected.className = selected.pclass;
+        }
+        selected = obj;
+        selected.pclass = obj.className;
+        obj.className = sclass;
+      }
+      
+      function Start(sclass)
+      {
+        selected = ch3;
+        ch3.pclass = ch3.className;
+        ch3.className = sclass;
+      }
+	</script>
+</head>
+
+<body onload="Start('chapter_s')">
+
+	<a href="24.1.html"  class="item_p" onclick="OnClick(this,'item_s')" onmouseover="OnMouseOver(this,'item_a')" onmouseout="OnMouseOut(this)" target="content">
+		24.1 Anonymous method expressions
+	</a><br />
+	<a href="24.2.html"  class="item_p" onclick="OnClick(this,'item_s')" onmouseover="OnMouseOver(this,'item_a')" onmouseout="OnMouseOut(this)" target="content">
+		24.2 Anonymous method signatures1.2 The .NET Platform
+	</a><br />
+	<a href="24.3.html"  class="item_p" onclick="OnClick(this,'item_s')" onmouseover="OnMouseOver(this,'item_a')" onmouseout="OnMouseOut(this)" target="content">
+		24.3 Anonymous method conversions
+	</a><br />
+	<a href="24.4.html"  class="item_p" onclick="OnClick(this,'item_s')" onmouseover="OnMouseOver(this,'item_a')" onmouseout="OnMouseOut(this)" target="content">
+		24.4 Anonymous method blocks
+	</a><br />
+	<a href="24.5.html"  class="item_p" onclick="OnClick(this,'item_s')" onmouseover="OnMouseOver(this,'item_a')" onmouseout="OnMouseOut(this)" target="content">
+		24.5 Outer variables
+	</a>
+	<div class="submenu">
+		<a href="24.5.1.html"  class="item_p" onclick="OnClick(this,'item_s')" onmouseover="OnMouseOver(this,'item_a')" onmouseout="OnMouseOut(this)" target="content">
+			24.5.1 Captured outer variables
+		</a><br />
+		<a href="24.5.2.html"  class="item_p" onclick="OnClick(this,'item_s')" onmouseover="OnMouseOver(this,'item_a')" onmouseout="OnMouseOut(this)" target="content">
+			24.5.2 Instantiation of local variables
+		</a>
+	</div>
+	<a href="24.6.html"  class="item_p" onclick="OnClick(this,'item_s')" onmouseover="OnMouseOver(this,'item_a')" onmouseout="OnMouseOut(this)" target="content">
+		24.6 Anonymous method evaluation
+	</a><br />
+	<a href="24.7.html"  class="item_p" onclick="OnClick(this,'item_s')" onmouseover="OnMouseOver(this,'item_a')" onmouseout="OnMouseOut(this)" target="content">
+		24.7 Delegate instance equality
+	</a><br />
+	<a href="24.8.html"  class="item_p" onclick="OnClick(this,'item_s')" onmouseover="OnMouseOver(this,'item_a')" onmouseout="OnMouseOut(this)" target="content">
+		24.8 Definite assignment
+	</a><br />
+	<a href="24.9.html"  class="item_p" onclick="OnClick(this,'item_s')" onmouseover="OnMouseOver(this,'item_a')" onmouseout="OnMouseOut(this)" target="content">
+		24.9 Method group conversions
+	</a><br />
+	<a href="24.10.html"  class="item_p" onclick="OnClick(this,'item_s')" onmouseover="OnMouseOver(this,'item_a')" onmouseout="OnMouseOut(this)" target="content">
+		24.10 Delegate creation expressions
+	</a><br />
+	<a href="24.11.html"  class="item_p" onclick="OnClick(this,'item_s')" onmouseover="OnMouseOver(this,'item_a')" onmouseout="OnMouseOut(this)" target="content">
+		24.11 Implementation example
+	</a><br />
+
+</body>
+</html>

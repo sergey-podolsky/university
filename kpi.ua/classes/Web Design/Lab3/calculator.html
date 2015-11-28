@@ -1,0 +1,146 @@
+<!--- Podolsky Sergey KV-64 --->
+<html>
+<head>
+    <title>Sergey Podolsky KV-64    Calculator</title>
+    
+    <style type="text/css">
+        input {width:95%; height:95%}
+        table {width:300px; height:300px}
+        td {width:14%}
+    </style>
+    
+    <script type="text/javascript">
+        function appendString(text)
+        {
+            if (display.value == null || display.value == "0")
+                display.value = text
+            else
+                display.value += text
+        }
+        
+        function deleteChar()
+        {
+            display.value = display.value.substring(0, display.value.length - 1)
+        }
+        
+        function changeSign()
+        {
+            if(display.value.substring(0, 1) == "-")
+                display.value = display.value.substring(1, display.value.length)
+            else
+                display.value = "-" + display.value
+        }
+
+        function calculate()
+        {
+            try
+            {
+                display.value = eval(display.value.replace("sin", "Math.sin").replace("cos", "Math.cos").replace("tan", "Math.tan").replace("sqrt", "Math.sqrt").replace("log", "Math.log").replace("exp", "Math.exp").replace("pow", "Math.pow"))
+            }
+            catch (err)
+            {
+                alert("Syntax error:\n" + err)
+            }
+        }
+        
+        function sqr(value)
+        {
+            return value * value
+        }
+    </script>
+</head>
+
+<body>
+<table bgcolor=olive align=center>
+    <tr style="height:75px">
+        <td colspan="7">
+            <input type="text" id="display" value="0" style="width:99%" /></td>
+    </tr>
+    <tr>
+        <td>
+    <input type="button" value="CE" onclick="display.value='0'" /></td>
+        <td>
+    <input type="button" value=" C " onclick="deleteChar()" /></td>
+        <td>
+    <input type="button" value="+/-" onclick="changeSign()" /></td>
+        <td>
+    <input type="button" value="%" onclick="appendString('%')" /></td>
+        <td>
+    <input type="button" value="sin" onclick="appendString('sin(')" /></td>
+        <td>
+            <input type="button" value="(" onclick="appendString('(')" /></td>
+        <td>
+    <input type="button" value=")" onclick="appendString(')')" /></td>
+    </tr>
+    <tr>
+        <td>
+    <input type="button" value="1" onclick="appendString('1')" 
+                style="background-color:#CCFFFF"/></td>
+        <td>
+    <input type="button" value="2" onclick="appendString('2')" 
+                style="background-color: #CCFFFF" /></td>
+        <td>
+    <input type="button" value="3" onclick="appendString('3')" 
+                style="background-color: #CCFFFF" /></td>
+        <td>
+    <input type="button" value="/" onclick="appendString('/')" /></td>
+        <td>
+    <input type="button" value="cos" onclick="appendString('cos(')" /></td>
+        <td>
+    <input type="button" value="exp" onclick="appendString('exp(')" /></td>
+        <td>
+    <input type="button" value="sqr" onclick="appendString('sqr(')" /></td>
+    </tr>
+    <tr>
+        <td>
+    <input type="button" value="4" onclick="appendString('4')" 
+                style="background-color: #CCFFFF" /></td>
+        <td>
+    <input type="button" value="5" onclick="appendString('5')" 
+                style="background-color: #CCFFFF" /></td>
+        <td>
+    <input type="button" value="6" onclick="appendString('6')" 
+                style="background-color: #CCFFFF" /></td>
+        <td>
+    <input type="button" value="*" onclick="appendString('*')" /></td>
+        <td>
+    <input type="button" value="tan" onclick="appendString('tan(')" /></td>
+        <td>
+    <input type="button" value="log" onclick="appendString('log(')" /></td>
+        <td>
+    <input type="button" value="sqrt" onclick="appendString('sqrt(')" /></td>
+    </tr>
+    <tr>
+        <td>
+    <input type="button" value="7" onclick="appendString('7')" 
+                style="background-color: #CCFFFF" /></td>
+        <td>
+    <input type="button" value="8" onclick="appendString('8')" 
+                style="background-color: #CCFFFF" /></td>
+        <td>
+    <input type="button" value="9" onclick="appendString('9')" 
+                style="background-color: #CCFFFF" /></td>
+        <td>
+    <input type="button" value="-" onclick="appendString('-')" /></td>
+        <td>
+    <input type="button" value="pow" onclick="appendString('pow(')"/></td>
+        <td colspan="2" rowspan="2">
+    <input type="button" value="=" onclick="calculate()" 
+                style="font-size: x-large;" /></td>
+    </tr>
+    <tr>
+        <td colspan="2">
+    <input type="button" value="0" onclick="appendString('0')" 
+                style="background-color: #CCFFFF" /></td>
+        <td>
+    <input type="button" value="." onclick="appendString('.')" /></td>
+        <td>
+    <input type="button" value="+" onclick="appendString('+')" /></td>
+        <td>
+            <input type="button" value="," onclick="appendString(',')" /></td>
+    </tr>
+</table>
+    <p>
+        &nbsp;</p>
+</body>
+</html>

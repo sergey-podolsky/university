@@ -1,0 +1,38 @@
+﻿<!--- Podolsky Sergey KV-64 --->
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <title>24.4 Anonymous method blocks</title>
+</head>
+
+<body>
+  <div class="refh">
+    <span class="refl"><a class="refp" href="24.3.html" target="_self" onclick="parent.menu.OnClickC(parent.menu.ch3_1, 'item_s');" onmouseover="this.className='refa';" onmouseout="this.className='refp';" language="Javascript1.2">&lt;&lt;Previous</a></span>
+    <a class="refp" href="24.5.html" target="_self" onclick="parent.menu.OnClickC(parent.menu.ch3_3, 'item_s');" onmouseover="this.className='refa';" onmouseout="this.className='refp';" language="Javascript1.2">Next&gt;&gt;</a>
+  </div>
+  
+  <div class="h1">24.4 Anonymous method blocks</div>
+  
+  <div class="parag">
+	The block of an anonymous-method-expression is subject to the following rules:
+  </div>
+  
+  <ul class="disc">
+	<li>If the anonymous method includes a signature, the parameters specified in the signature are available in the block. If the anonymous method has no signature it can be converted to a delegate type having parameters (§21.3), but the parameters cannot be accessed in the block.</li>
+	<li>Except for ref or out parameters specified in the signature (if any) of the nearest enclosing anonymous method, it is a compile-time error for the block to access a ref or out parameter.</li>
+	<li>When the type of this is a struct type, it is a compile-time error for the block to access this. This is true whether the access is explicit (as in this.x) or implicit (as in x where x is an instance member of the struct). This rule simply prohibits such access and does not affect whether member lookup results in a member of the struct.</li>
+	<li>The block has access to the outer variables (§21.5) of the anonymous method. Access of an outer variable will reference the instance of the variable that is active at the time the anonymous-method-expression is evaluated (§21.6).</li>
+	<li>It is a compile-time error for the block to contain a goto statement, break statement, or continue statement whose target is outside the block or within the block of a contained anonymous method.</li>
+	<li>A return statement in the block returns control from an invocation of the nearest enclosing anonymous method, not from the enclosing function member. An expression specified in a return statement must be compatible with the delegate type to which the nearest enclosing anonymous-method-expression is converted (§21.3).</li>
+  </ul>
+  
+  <div class="parag">
+	It is explicitly unspecified whether there is any way to execute the block of an anonymous method other than through evaluation and invocation of the anonymous-method-expression. In particular, the compiler may choose to implement an anonymous method by synthesizing one or more named methods or types. The names of any such synthesized elements must be in the space reserved for compiler use (that is, the names must contain two consecutive underscore characters).
+  </div>
+  
+  <div class="refh">
+    <span class="refl"><a class="refp" href="24.3.html" target="_self" onclick="parent.menu.OnClickC(parent.menu.ch3_1, 'item_s');" onmouseover="this.className='refa';" onmouseout="this.className='refp';" language="Javascript1.2">&lt;&lt;Previous</a></span>
+    <a class="refp" href="24.5.html" target="_self" onclick="parent.menu.OnClickC(parent.menu.ch3_3, 'item_s');" onmouseover="this.className='refa';" onmouseout="this.className='refp';" language="Javascript1.2">Next&gt;&gt;</a>
+  </div>
+</body>
+</html>
