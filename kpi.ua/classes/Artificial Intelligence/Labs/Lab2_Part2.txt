@@ -1,0 +1,43 @@
+% ark-clause form
+domains
+	slist=symbol*
+	ilist=integer*
+	
+predicates
+	ark(symbol, symbol, integer)
+	member(symbol, slist)
+	path(symbol, symbol, slist, integer)
+	path(symbol, symbol, slist, slist, integer)
+	min(ilist, integer)
+	min(ilist, integer, integer)
+	shortest(symbol, symbol, slist, integer).
+
+clauses
+	% "arc" is reserved predicate
+	ark(a,b,2).
+	ark(a,c,2).
+	ark(a,d,9).
+	ark(a,e,7).
+	ark(b,c,5).
+	ark(b,d,4).
+	ark(c,d,5).
+	ark(c,e,3).
+	ark(d,e,1).
+	ark(e,e,1).
+	
+	member(H,[H|_]):-!.
+	member(H,[_|T]):-member(H,T).
+	
+	path(X,Y,[X|O],D):-path(X,Y,[X],O,D).
+	path(X,Y,I,[Y],D):-ark(Y,X,D), not (member(Y,I)).
+	path(X,Y,I,[Y],D):-ark(X,Y,D), not (member(Y,I)).
+	path(X,Z,I,[Y|O],D):-ark(X,Y,D1), not (member(Y,I)), path(Y,Z,[Y|I],O,D2), D=D1+D2.
+	path(X,Z,I,[Y|O],D):-ark(Y,X,D1), not (member(Y,I)), path(Y,Z,[Y|I],O,D2), D=D1+D2.
+	
+	min([H|T],M):-min(T,H,M).
+	min([],C,C).
+	min([H|T],C,M):-H<C, min(T,H,M).
+	min([H|T],C,M):-H>=C, min(T,C,M).
+	
+	shortest(X,Y,L,D):-findall(D1,path(X,Y,_,D1),DL), min(DL,D), path(X,Y,L,D).
+	

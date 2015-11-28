@@ -1,0 +1,142 @@
+domains
+	slist=symbol*
+	ilist=integer*
+
+predicates
+	%----------------Lab1----------------
+	fib(integer, integer)
+	
+	prime(integer)
+	prime(integer, integer)
+	
+	coprimes(integer, integer)
+	
+	factorization(integer)
+	print_list(ilist)
+	
+	euler(integer, integer)
+	euler(integer, integer,integer)
+	
+	range(integer, integer)
+	
+	%----------------Lab2----------------
+	length(ilist, integer)
+	
+	getitem(slist, integer, symbol)
+	
+	meaning(integer, symbol)
+	translate(ilist, slist)
+	
+	even(ilist)
+	odd(ilist)
+	
+	primes(integer, ilist)
+	
+	duplicate(integer, slist, slist)
+	duphead(integer, slist, slist)
+	
+	split(integer, ilist, ilist, ilist)
+	
+	factorize(integer, ilist)
+	factorize(integer, ilist, ilist)
+	
+	range_list(integer, integer, ilist).
+	
+	average(ilist, real)
+	sum(ilist, real)
+	
+	intersect(slist, slist, slist)
+	remove(symbol, slist, slist)
+	
+	rest(slist, symbol, slist)
+	
+	adjacent(symbol, symbol, slist)
+	
+clauses
+	%----------------Lab1----------------
+	fib(0,1).
+	fib(1,1).
+	fib(N,V):-N>1, N1=N-1, N2=N-2, fib(N1,V1), fib(N2,V2), V=V1+V2.
+	
+	prime(N):-N>1, S=sqrt(N), prime(N,S).
+	prime(_,1).
+	prime(N,S):-N mod S>0, S1=S-1, prime(N,S1).
+	
+	coprimes(1,1).
+	coprimes(X,Y):-X<Y, Y1=Y-X, coprimes(X,Y1).
+	coprimes(X,Y):-Y<X, X1=X-Y, coprimes(X1,Y).
+	
+	factorization(N):-factorize(N,F), print_list(F).
+	print_list([]).
+	print_list([H|T]):-print_list(T), write(H), nl.
+	
+	euler(M,V):-M>0, euler(M,V,M).
+	euler(_,0,0):-!.
+	euler(M,V,R):-not (coprimes(M,R)), R1=R-1, euler(M,V,R1), !.
+	euler(M,V,R):-R1=R-1, euler(M,V1,R1), V=V1+1.
+	
+	range(N1,N2):-range_list(N1,N2,L), print_list(L).
+	
+	%----------------Lab2----------------
+	length([],0).
+	length([H|T],N):-length(T,N1), N=N1+1.
+	
+	getitem([H|T],0,H).
+	getitem([H|T],N,V):-N1=N-1, getitem(T,N1,V).
+	
+	meaning(1,one).
+	meaning(2,two).
+	meaning(3,three).
+	meaning(4,four).
+	meaning(5,five).
+	meaning(6,six).
+	meaning(7,seven).
+	meaning(8,eight).
+	meaning(9,ten).
+	translate([],[]).
+	translate([H1|T1],[H2|T2]):-meaning(H1,H2), translate(T1,T2).
+	
+	even(L):-length(L,N), N mod 2=0.
+	odd(L):-not (even(L)).
+	
+	primes(0,[]).
+	primes(H,[H|T]):-prime(H), H1=H-1, primes(H1,T), !.
+	primes(H,L):-H1=H-1, primes(H1,L).
+	
+	duplicate(_,[],[]).
+	duplicate(N,[H|T],L):-duplicate(N,T,V), duphead(N,[H|V],L).
+	duphead(0,[H|T],T):-!.
+	duphead(N,[H|T],[H|L]):-N1=N-1, duphead(N1,[H|T],L).
+	
+	split(_,[],[],[]).
+	split(Middle,[Middle|T],L1,L2):-split(Middle,T,L1,L2).
+	split(Middle,[H|T],[H|L1],L2):-H<Middle, split(Middle,T,L1,L2).
+	split(Middle,[H|T],L1,[H|L2]):-H>Middle, split(Middle,T,L1,L2).
+	
+	factorize(1,[1]).
+	factorize(N,[N]):-prime(N),!.
+	factorize(N,F):-S=sqrt(N), primes(S,P), factorize(N,P,F).
+	factorize(N,[H|P],F):-N mod H>0, factorize(N,P,F).
+	factorize(N,[H|P],[H|F]):-N mod H=0, M=N/H, factorize(M,F).
+	
+	range_list(N1,N2,[]):-N1>N2.
+	range_list(N1,N2,[N1|L]):-N1<=N2, N=N1+1, range_list(N,N2,L).
+	
+	average(L,A):-length(L,N), N>0, sum(L,S), A=S/N.
+	sum([],0).
+	sum([H|T],S):-sum(T,S1),S=H+S1.
+
+	intersect(_,[],[]).
+	intersect([],_,[]).
+	intersect([H|T],L,[H|I]):-remove(H,L,L2), intersect(T,L2,I),!.
+	intersect([H|T],L,I):-intersect(T,L,I).
+	
+	remove(E,[E|T],T):-!.
+	remove(E,[H|T],[H|L]):-remove(E,T,L).
+	
+	rest([Y|Z],Y,Z).
+	rest([H|X],Y,Z):-rest(X,Y,Z).
+	
+	adjacent(X,Y,[X|[Y|_]]).
+	adjacent(X,Y,[Y|[X|_]]).
+	adjacent(X,Y,[H|Z]):-adjacent(X,Y,Z).
