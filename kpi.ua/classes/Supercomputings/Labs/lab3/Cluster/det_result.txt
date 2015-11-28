@@ -1,0 +1,2 @@
+Determinant:	4892.000000
+Execution time:	0.000000 seconds

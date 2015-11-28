@@ -1,0 +1,2 @@
+det = 885735.000000
+Execution time:	0 milliseconds

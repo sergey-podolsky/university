@@ -1,0 +1,36 @@
+MPI_Init(int *argc, char ***argv)
+MPI_Finalize()
+MPI_Abort(MPI_Comm comm, int errorcode)
+MPI_Comm_size(MPI_Comm comm, int *size)
+MPI_Comm_rank(MPI_Comm comm, int *rank)
+MPI_Send(void* buf, int count, MPI_Datatype datatype, int dest, int tag, MPI_Comm comm)
+MPI_Recv(void* buf, int count, MPI_Datatype datatype, int source, int tag, MPI_Comm comm, MPI_Status *status)
+MPI_Isend(void *buf, int count, MPI_Datatype datatype, int dest, int tag, MPI_Comm comm, MPI_Request *request)
+MPI_Irecv(void *buf, int count, MPI_Datatype datatype, int source, int tag, MPI_Comm comm, MPI_Request *request)
+MPI_Wait (MPI_Request *request, MPI_Status *status)
+MPI_Waitall(int count, MPI_Request array_of_requests[], MPI_Status array_of_statuses[])
+MPI_Bcast(void *buffer, int count, MPI_Datatype datatype, int root, MPI_Comm comm)
+MPI_Reduce(void *sendbuf, void *recvbuf, int count, MPI_Datatype datatype, MPI_Op op, int root, MPI_Comm comm)
+MPI_Scatter(void *sendbuf, int sendcnt, MPI_Datatype sendtype,
+            void *recvbuf, int recvcnt, MPI_Datatype recvtype,
+            int root, MPI_Comm comm)
+MPI_Gather(void *sendbuf, int sendcnt, MPI_Datatype sendtype,
+           void *recvbuf, int recvcnt, MPI_Datatype recvtype, 
+           int root, MPI_Comm comm)
+MPI_Allgather(void *sendbuf, int sendcnt, MPI_Datatype sendtype,
+              void *recvbuf, int recvcnt, MPI_Datatype recvtype,
+              MPI_Comm comm)
+MPI_Allreduce(void *sendbuf, void *recvbuf, int count, MPI_Datatype datatype, MPI_op op, MPI_Comm comm)
+MPI_Reduce_scatter(void *sendbuf, void *recvbuf, int *recvcnts, MPI_Datatype datatype, MPI_Op op, MPI_Comm comm)
+MPI_Alltoall(void *sendbuf, int sendcount, MPI_Datatype sendtype,
+             void *recvbuf, int recvcount, MPI_Datatype recvtype,
+             MPI_Comm comm)
+MPI_Type_commit(MPI_Datatype *type)
+MPI_Type_free(MPI_Datatype *type)
+MPI_Type_extent(MPI_Datatype type, MPI_Aint *extent)
+MPI_Type_contiguous(int count, MPI_Datatype oldtype, MPI_Datatype *newtype)
+MPI_Type_vector(int count, int blocklength, int stride, MPI_Datatype oldtype, MPI_Datatype *newtype)
+MPI_Type_hvector(int count, int blocklength, MPI_Aint stride, MPI_Datatype oldtype, MPI_Datatype *newtype)
+MPI_Type_indexed(int count, int blocklengths[], int indices[], MPI_Datatype oldtype, MPI_Datatype &newtype);
+MPI_Type_hindexed(int count, int blocklengths[], MPI_Aint indices[], MPI_Datatype oldtype, MPI_Datatype &newtype)
+MPI_Type_struct(int count, int blocklength[], MPI_Aint offsets[], MPI_Datatype[] oldtypes, MPI_Datatype *newtype)

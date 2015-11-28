@@ -1,0 +1,13 @@
+#!/bin/bash
+#PBS -l nodes=1:ppn=3
+#PBS -S /bin/bash
+#PBS -N jacobi
+#PBS -o jacobi.out
+#PBS -e jacobi.err
+echo Running on host 'hostname'
+echo Time is 'date'
+echo Directory is 'pwd'
+echo This jobs runs on the following processors:
+echo 'cat $PBS_NODEFILE'
+echo $PBS_NODEFILE
+mpirun jacobi.exe

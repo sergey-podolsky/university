@@ -1,0 +1,33 @@
+1   integrate_left_rectangle    pow(x,x+3)                          0      3.5  0.0001 x
+2   integrate_left_rectangle    pow(4,2*x+3)                       -3      2    0.001 x
+3   integrate_right_rectangle   log(x*x*x)/log(2)                   5   1500    0.0001 x
+4   integrate_right_rectangle   x*fabs(x)*sin(x)                    0    100    0.001 x
+5   integrate_middle_rectangle  log10(x*fabs(sin(x)))               1    250    0.00001 x
+6   integrate_middle_rectangle  x*x*x*cos(x)                        0     15    0.0001 x
+7   integrate_trap              pow(2,x)*sin(x)                    -3     10    0.0001 x
+8   integrate_trap              pow(fabs(x),fabs(x))                0      5    0.0001 x
+9   integrate_simps             5*x-sin(x)*sin(x)                   0    100    0.0001 Q
+10  integrate_simps             sin(x)/(x*x*x)                      0.03  10    0.00001 Q
+
+11  integrate_left_rectangle    5*x-sin(x)*sin(x)                   0    100    0.0001 x
+12  integrate_left_rectangle    sin(x)/(x*x*x)                      0.03  10    0.00001 x
+13  integrate_right_rectangle   pow(x,x+3)                          0      3.5  0.0001 x
+14  integrate_right_rectangle   pow(4,2*x+3)                       -3      2    0.001 x
+15  integrate_middle_rectangle  log(x*x*x)/log(2)                   5   1500    0.000001 Q
+16  integrate_middle_rectangle  x*fabs(x)*sin(x)                    0    100    0.00001 Q
+17  integrate_trap              log10(x*fabs(sin(x)))               1    250    0.00001 x
+18  integrate_trap              x*x*x*cos(x)                        0     15    0.0001 x
+19  integrate_simps             pow(2,x)*sin(x)                    -3     10    0.0001 Q
+20  integrate_simps             pow(fabs(x),fabs(x))                0      5    0.0001 Q
+
+21  integrate_left_rectangle    pow(2,x)*sin(x)                    -3     10    0.0001 x
+22  integrate_left_rectangle    pow(fabs(x),fabs(x))                0      5    0.0001 x
+23  integrate_right_rectangle   5*x-sin(x)*sin(x)                   0    100    0.0001 x
+24  integrate_right_rectangle   sin(x)/(x*x*x)                      0.03  10    0.00001 x
+25  integrate_middle_rectangle  pow(x,x+3)                          0      3.5  0.0001 Q
+26  integrate_middle_rectangle  pow(4,2*x+3)                       -3      2    0.001 Q
+27  integrate_trap              log(x*x*x)/log(2)                   5    150    0.0001 x
+28  integrate_trap              x*fabs(x)*sin(x)                    0     28    0.0001 x
+29  integrate_simps             log10(x*fabs(sin(x)))               1    250    0.00001 x
+30  integrate_simps             x*x*x*cos(x)                        0     15    0.0001 Q
+

@@ -1,0 +1,9 @@
+x[0] = 	0.056420
+x[1] = 	-0.015547
+x[2] = 	0.074766
+x[3] = 	0.105215
+x[4] = 	-0.311176
+x[5] = 	0.181620
+
+Number of processes:	3
+Execution time:	10 milliseconds
