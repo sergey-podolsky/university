@@ -1,0 +1,356 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="qap_test.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\..\Master%27s Work\C++\QuadraticAssignmentProblem\Solve.bat" />
+    <None Include="QAPLIB\QAP Instances\bur26a.dat" />
+    <None Include="QAPLIB\QAP Instances\bur26b.dat" />
+    <None Include="QAPLIB\QAP Instances\bur26c.dat" />
+    <None Include="QAPLIB\QAP Instances\bur26d.dat" />
+    <None Include="QAPLIB\QAP Instances\bur26e.dat" />
+    <None Include="QAPLIB\QAP Instances\bur26f.dat" />
+    <None Include="QAPLIB\QAP Instances\bur26g.dat" />
+    <None Include="QAPLIB\QAP Instances\bur26h.dat" />
+    <None Include="QAPLIB\QAP Instances\chr12a.dat" />
+    <None Include="QAPLIB\QAP Instances\chr12b.dat" />
+    <None Include="QAPLIB\QAP Instances\chr12c.dat" />
+    <None Include="QAPLIB\QAP Instances\chr15a.dat" />
+    <None Include="QAPLIB\QAP Instances\chr15b.dat" />
+    <None Include="QAPLIB\QAP Instances\chr15c.dat" />
+    <None Include="QAPLIB\QAP Instances\chr18a.dat" />
+    <None Include="QAPLIB\QAP Instances\chr18b.dat" />
+    <None Include="QAPLIB\QAP Instances\chr20a.dat" />
+    <None Include="QAPLIB\QAP Instances\chr20b.dat" />
+    <None Include="QAPLIB\QAP Instances\chr20c.dat" />
+    <None Include="QAPLIB\QAP Instances\chr22a.dat" />
+    <None Include="QAPLIB\QAP Instances\chr22b.dat" />
+    <None Include="QAPLIB\QAP Instances\chr25a.dat" />
+    <None Include="QAPLIB\QAP Instances\els19.dat" />
+    <None Include="QAPLIB\QAP Instances\esc128.dat" />
+    <None Include="QAPLIB\QAP Instances\esc16a.dat" />
+    <None Include="QAPLIB\QAP Instances\esc16b.dat" />
+    <None Include="QAPLIB\QAP Instances\esc16c.dat" />
+    <None Include="QAPLIB\QAP Instances\esc16d.dat" />
+    <None Include="QAPLIB\QAP Instances\esc16e.dat" />
+    <None Include="QAPLIB\QAP Instances\esc16f.dat" />
+    <None Include="QAPLIB\QAP Instances\esc16g.dat" />
+    <None Include="QAPLIB\QAP Instances\esc16h.dat" />
+    <None Include="QAPLIB\QAP Instances\esc16i.dat" />
+    <None Include="QAPLIB\QAP Instances\esc16j.dat" />
+    <None Include="QAPLIB\QAP Instances\esc32a.dat" />
+    <None Include="QAPLIB\QAP Instances\esc32b.dat" />
+    <None Include="QAPLIB\QAP Instances\esc32c.dat" />
+    <None Include="QAPLIB\QAP Instances\esc32d.dat" />
+    <None Include="QAPLIB\QAP Instances\esc32e.dat" />
+    <None Include="QAPLIB\QAP Instances\esc32g.dat" />
+    <None Include="QAPLIB\QAP Instances\esc32h.dat" />
+    <None Include="QAPLIB\QAP Instances\esc64a.dat" />
+    <None Include="QAPLIB\QAP Instances\had12.dat" />
+    <None Include="QAPLIB\QAP Instances\had14.dat" />
+    <None Include="QAPLIB\QAP Instances\had16.dat" />
+    <None Include="QAPLIB\QAP Instances\had18.dat" />
+    <None Include="QAPLIB\QAP Instances\had20.dat" />
+    <None Include="QAPLIB\QAP Instances\kra30a.dat" />
+    <None Include="QAPLIB\QAP Instances\kra30b.dat" />
+    <None Include="QAPLIB\QAP Instances\kra32.dat" />
+    <None Include="QAPLIB\QAP Instances\lipa20a.dat" />
+    <None Include="QAPLIB\QAP Instances\lipa20b.dat" />
+    <None Include="QAPLIB\QAP Instances\lipa30a.dat" />
+    <None Include="QAPLIB\QAP Instances\lipa30b.dat" />
+    <None Include="QAPLIB\QAP Instances\lipa40a.dat" />
+    <None Include="QAPLIB\QAP Instances\lipa40b.dat" />
+    <None Include="QAPLIB\QAP Instances\lipa50a.dat" />
+    <None Include="QAPLIB\QAP Instances\lipa50b.dat" />
+    <None Include="QAPLIB\QAP Instances\lipa60a.dat" />
+    <None Include="QAPLIB\QAP Instances\lipa60b.dat" />
+    <None Include="QAPLIB\QAP Instances\lipa70a.dat" />
+    <None Include="QAPLIB\QAP Instances\lipa70b.dat" />
+    <None Include="QAPLIB\QAP Instances\lipa80a.dat" />
+    <None Include="QAPLIB\QAP Instances\lipa80b.dat" />
+    <None Include="QAPLIB\QAP Instances\lipa90a.dat" />
+    <None Include="QAPLIB\QAP Instances\lipa90b.dat" />
+    <None Include="QAPLIB\QAP Instances\nug12.dat" />
+    <None Include="QAPLIB\QAP Instances\nug14.dat" />
+    <None Include="QAPLIB\QAP Instances\nug15.dat" />
+    <None Include="QAPLIB\QAP Instances\nug16a.dat" />
+    <None Include="QAPLIB\QAP Instances\nug16b.dat" />
+    <None Include="QAPLIB\QAP Instances\nug17.dat" />
+    <None Include="QAPLIB\QAP Instances\nug18.dat" />
+    <None Include="QAPLIB\QAP Instances\nug20.dat" />
+    <None Include="QAPLIB\QAP Instances\nug21.dat" />
+    <None Include="QAPLIB\QAP Instances\nug22.dat" />
+    <None Include="QAPLIB\QAP Instances\nug24.dat" />
+    <None Include="QAPLIB\QAP Instances\nug25.dat" />
+    <None Include="QAPLIB\QAP Instances\nug27.dat" />
+    <None Include="QAPLIB\QAP Instances\nug28.dat" />
+    <None Include="QAPLIB\QAP Instances\nug30.dat" />
+    <None Include="QAPLIB\QAP Instances\rou12.dat" />
+    <None Include="QAPLIB\QAP Instances\rou15.dat" />
+    <None Include="QAPLIB\QAP Instances\rou20.dat" />
+    <None Include="QAPLIB\QAP Instances\scr12.dat" />
+    <None Include="QAPLIB\QAP Instances\scr15.dat" />
+    <None Include="QAPLIB\QAP Instances\scr20.dat" />
+    <None Include="QAPLIB\QAP Instances\sko100a.dat" />
+    <None Include="QAPLIB\QAP Instances\sko100b.dat" />
+    <None Include="QAPLIB\QAP Instances\sko100c.dat" />
+    <None Include="QAPLIB\QAP Instances\sko100d.dat" />
+    <None Include="QAPLIB\QAP Instances\sko100e.dat" />
+    <None Include="QAPLIB\QAP Instances\sko100f.dat" />
+    <None Include="QAPLIB\QAP Instances\sko42.dat" />
+    <None Include="QAPLIB\QAP Instances\sko49.dat" />
+    <None Include="QAPLIB\QAP Instances\sko56.dat" />
+    <None Include="QAPLIB\QAP Instances\sko64.dat" />
+    <None Include="QAPLIB\QAP Instances\sko72.dat" />
+    <None Include="QAPLIB\QAP Instances\sko81.dat" />
+    <None Include="QAPLIB\QAP Instances\sko90.dat" />
+    <None Include="QAPLIB\QAP Instances\ste36a.dat" />
+    <None Include="QAPLIB\QAP Instances\ste36b.dat" />
+    <None Include="QAPLIB\QAP Instances\ste36c.dat" />
+    <None Include="QAPLIB\QAP Instances\tai100a.dat" />
+    <None Include="QAPLIB\QAP Instances\tai100b.dat" />
+    <None Include="QAPLIB\QAP Instances\tai10a.dat" />
+    <None Include="QAPLIB\QAP Instances\tai10b.dat" />
+    <None Include="QAPLIB\QAP Instances\tai12a.dat" />
+    <None Include="QAPLIB\QAP Instances\tai12b.dat" />
+    <None Include="QAPLIB\QAP Instances\tai150b.dat" />
+    <None Include="QAPLIB\QAP Instances\tai15a.dat" />
+    <None Include="QAPLIB\QAP Instances\tai15b.dat" />
+    <None Include="QAPLIB\QAP Instances\tai17a.dat" />
+    <None Include="QAPLIB\QAP Instances\tai20a.dat" />
+    <None Include="QAPLIB\QAP Instances\tai20b.dat" />
+    <None Include="QAPLIB\QAP Instances\tai256c.dat" />
+    <None Include="QAPLIB\QAP Instances\tai25a.dat" />
+    <None Include="QAPLIB\QAP Instances\tai25b.dat" />
+    <None Include="QAPLIB\QAP Instances\tai30a.dat" />
+    <None Include="QAPLIB\QAP Instances\tai30b.dat" />
+    <None Include="QAPLIB\QAP Instances\tai35a.dat" />
+    <None Include="QAPLIB\QAP Instances\tai35b.dat" />
+    <None Include="QAPLIB\QAP Instances\tai40a.dat" />
+    <None Include="QAPLIB\QAP Instances\tai40b.dat" />
+    <None Include="QAPLIB\QAP Instances\tai50a.dat" />
+    <None Include="QAPLIB\QAP Instances\tai50b.dat" />
+    <None Include="QAPLIB\QAP Instances\tai60a.dat" />
+    <None Include="QAPLIB\QAP Instances\tai60b.dat" />
+    <None Include="QAPLIB\QAP Instances\tai64c.dat" />
+    <None Include="QAPLIB\QAP Instances\tai80a.dat" />
+    <None Include="QAPLIB\QAP Instances\tai80b.dat" />
+    <None Include="QAPLIB\QAP Instances\tho150.dat" />
+    <None Include="QAPLIB\QAP Instances\tho30.dat" />
+    <None Include="QAPLIB\QAP Instances\tho40.dat" />
+    <None Include="QAPLIB\QAP Instances\wil100.dat" />
+    <None Include="QAPLIB\QAP Instances\wil50.dat" />
+    <None Include="QAPLIB\QAP Solutions\bur26a.sln" />
+    <None Include="QAPLIB\QAP Solutions\bur26b.sln" />
+    <None Include="QAPLIB\QAP Solutions\bur26c.sln" />
+    <None Include="QAPLIB\QAP Solutions\bur26d.sln" />
+    <None Include="QAPLIB\QAP Solutions\bur26e.sln" />
+    <None Include="QAPLIB\QAP Solutions\bur26f.sln" />
+    <None Include="QAPLIB\QAP Solutions\bur26g.sln" />
+    <None Include="QAPLIB\QAP Solutions\bur26h.sln" />
+    <None Include="QAPLIB\QAP Solutions\chr12a.sln" />
+    <None Include="QAPLIB\QAP Solutions\chr12b.sln" />
+    <None Include="QAPLIB\QAP Solutions\chr12c.sln" />
+    <None Include="QAPLIB\QAP Solutions\chr15a.sln" />
+    <None Include="QAPLIB\QAP Solutions\chr15b.sln" />
+    <None Include="QAPLIB\QAP Solutions\chr15c.sln" />
+    <None Include="QAPLIB\QAP Solutions\chr18a.sln" />
+    <None Include="QAPLIB\QAP Solutions\chr18b.sln" />
+    <None Include="QAPLIB\QAP Solutions\chr20a.sln" />
+    <None Include="QAPLIB\QAP Solutions\chr20b.sln" />
+    <None Include="QAPLIB\QAP Solutions\chr20c.sln" />
+    <None Include="QAPLIB\QAP Solutions\chr22a.sln" />
+    <None Include="QAPLIB\QAP Solutions\chr22b.sln" />
+    <None Include="QAPLIB\QAP Solutions\chr25a.sln" />
+    <None Include="QAPLIB\QAP Solutions\els19.sln" />
+    <None Include="QAPLIB\QAP Solutions\esc128.sln" />
+    <None Include="QAPLIB\QAP Solutions\esc16a.sln" />
+    <None Include="QAPLIB\QAP Solutions\esc16b.sln" />
+    <None Include="QAPLIB\QAP Solutions\esc16c.sln" />
+    <None Include="QAPLIB\QAP Solutions\esc16d.sln" />
+    <None Include="QAPLIB\QAP Solutions\esc16e.sln" />
+    <None Include="QAPLIB\QAP Solutions\esc16f.sln" />
+    <None Include="QAPLIB\QAP Solutions\esc16g.sln" />
+    <None Include="QAPLIB\QAP Solutions\esc16h.sln" />
+    <None Include="QAPLIB\QAP Solutions\esc16i.sln" />
+    <None Include="QAPLIB\QAP Solutions\esc16j.sln" />
+    <None Include="QAPLIB\QAP Solutions\esc32e.sln" />
+    <None Include="QAPLIB\QAP Solutions\esc32g.sln" />
+    <None Include="QAPLIB\QAP Solutions\had12.sln" />
+    <None Include="QAPLIB\QAP Solutions\had14.sln" />
+    <None Include="QAPLIB\QAP Solutions\had16.sln" />
+    <None Include="QAPLIB\QAP Solutions\had18.sln" />
+    <None Include="QAPLIB\QAP Solutions\had20.sln" />
+    <None Include="QAPLIB\QAP Solutions\kra30a.sln" />
+    <None Include="QAPLIB\QAP Solutions\kra30b.sln" />
+    <None Include="QAPLIB\QAP Solutions\kra32.sln" />
+    <None Include="QAPLIB\QAP Solutions\lipa20a.sln" />
+    <None Include="QAPLIB\QAP Solutions\lipa20b.sln" />
+    <None Include="QAPLIB\QAP Solutions\lipa30a.sln" />
+    <None Include="QAPLIB\QAP Solutions\lipa30b.sln" />
+    <None Include="QAPLIB\QAP Solutions\lipa40a.sln" />
+    <None Include="QAPLIB\QAP Solutions\lipa40b.sln" />
+    <None Include="QAPLIB\QAP Solutions\lipa50a.sln" />
+    <None Include="QAPLIB\QAP Solutions\lipa50b.sln" />
+    <None Include="QAPLIB\QAP Solutions\lipa60a.sln" />
+    <None Include="QAPLIB\QAP Solutions\lipa60b.sln" />
+    <None Include="QAPLIB\QAP Solutions\lipa70a.sln" />
+    <None Include="QAPLIB\QAP Solutions\lipa70b.sln" />
+    <None Include="QAPLIB\QAP Solutions\lipa80a.sln" />
+    <None Include="QAPLIB\QAP Solutions\lipa80b.sln" />
+    <None Include="QAPLIB\QAP Solutions\lipa90a.sln" />
+    <None Include="QAPLIB\QAP Solutions\lipa90b.sln" />
+    <None Include="QAPLIB\QAP Solutions\nug12.sln" />
+    <None Include="QAPLIB\QAP Solutions\nug14.sln" />
+    <None Include="QAPLIB\QAP Solutions\nug15.sln" />
+    <None Include="QAPLIB\QAP Solutions\nug16a.sln" />
+    <None Include="QAPLIB\QAP Solutions\nug16b.sln" />
+    <None Include="QAPLIB\QAP Solutions\nug17.sln" />
+    <None Include="QAPLIB\QAP Solutions\nug18.sln" />
+    <None Include="QAPLIB\QAP Solutions\nug20.sln" />
+    <None Include="QAPLIB\QAP Solutions\nug21.sln" />
+    <None Include="QAPLIB\QAP Solutions\nug22.sln" />
+    <None Include="QAPLIB\QAP Solutions\nug24.sln" />
+    <None Include="QAPLIB\QAP Solutions\nug25.sln" />
+    <None Include="QAPLIB\QAP Solutions\nug27.sln" />
+    <None Include="QAPLIB\QAP Solutions\nug28.sln" />
+    <None Include="QAPLIB\QAP Solutions\nug30.sln" />
+    <None Include="QAPLIB\QAP Solutions\rou12.sln" />
+    <None Include="QAPLIB\QAP Solutions\rou15.sln" />
+    <None Include="QAPLIB\QAP Solutions\rou20.sln" />
+    <None Include="QAPLIB\QAP Solutions\scr12.sln" />
+    <None Include="QAPLIB\QAP Solutions\scr15.sln" />
+    <None Include="QAPLIB\QAP Solutions\scr20.sln" />
+    <None Include="QAPLIB\QAP Solutions\sko100a.sln" />
+    <None Include="QAPLIB\QAP Solutions\sko100b.sln" />
+    <None Include="QAPLIB\QAP Solutions\sko100c.sln" />
+    <None Include="QAPLIB\QAP Solutions\sko100d.sln" />
+    <None Include="QAPLIB\QAP Solutions\sko100e.sln" />
+    <None Include="QAPLIB\QAP Solutions\sko100f.sln" />
+    <None Include="QAPLIB\QAP Solutions\sko81.sln" />
+    <None Include="QAPLIB\QAP Solutions\sko90.sln" />
+    <None Include="QAPLIB\QAP Solutions\ste36a.sln" />
+    <None Include="QAPLIB\QAP Solutions\ste36b.sln" />
+    <None Include="QAPLIB\QAP Solutions\ste36c.sln" />
+    <None Include="QAPLIB\QAP Solutions\tai100a.sln" />
+    <None Include="QAPLIB\QAP Solutions\tai100b.sln" />
+    <None Include="QAPLIB\QAP Solutions\tai12a.sln" />
+    <None Include="QAPLIB\QAP Solutions\tai12b.sln" />
+    <None Include="QAPLIB\QAP Solutions\tai150b.sln" />
+    <None Include="QAPLIB\QAP Solutions\tai15a.sln" />
+    <None Include="QAPLIB\QAP Solutions\tai15b.sln" />
+    <None Include="QAPLIB\QAP Solutions\tai17a.sln" />
+    <None Include="QAPLIB\QAP Solutions\tai20a.sln" />
+    <None Include="QAPLIB\QAP Solutions\tai20b.sln" />
+    <None Include="QAPLIB\QAP Solutions\tai256c.sln" />
+    <None Include="QAPLIB\QAP Solutions\tai25a.sln" />
+    <None Include="QAPLIB\QAP Solutions\tai25b.sln" />
+    <None Include="QAPLIB\QAP Solutions\tai30b.sln" />
+    <None Include="QAPLIB\QAP Solutions\tai35b.sln" />
+    <None Include="QAPLIB\QAP Solutions\tai40b.sln" />
+    <None Include="QAPLIB\QAP Solutions\tai50a.sln" />
+    <None Include="QAPLIB\QAP Solutions\tai50b.sln" />
+    <None Include="QAPLIB\QAP Solutions\tai60a.sln" />
+    <None Include="QAPLIB\QAP Solutions\tai60b.sln" />
+    <None Include="QAPLIB\QAP Solutions\tai64c.sln" />
+    <None Include="QAPLIB\QAP Solutions\tai80a.sln" />
+    <None Include="QAPLIB\QAP Solutions\tai80b.sln" />
+    <None Include="QAPLIB\QAP Solutions\tho150.sln" />
+    <None Include="QAPLIB\QAP Solutions\tho30.sln" />
+    <None Include="QAPLIB\QAP Solutions\tho40.sln" />
+    <None Include="QAPLIB\QAP Solutions\wil100.sln" />
+    <None Include="stats.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="abstract_qap.h" />
+    <ClInclude Include="local_optima_qap.h" />
+    <ClInclude Include="my_tabu_qap.h" />
+    <ClInclude Include="taillard_fant_qap.h" />
+    <ClInclude Include="taillard_sa_qap.h" />
+    <ClInclude Include="taillard_tabu_qap.h" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCTargetsPath Condition="'$(VCTargetsPath11)' != '' and '$(VSVersion)' == '' and '$(VisualStudioVersion)' == ''">$(VCTargetsPath11)</VCTargetsPath>
+  </PropertyGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{2DBB3CE1-E69F-4D59-8C3F-79F651B4E2C1}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>QuadraticAssignmentProblem</RootNamespace>
+    <ProjectName>QuadraticAssignmentProblem</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -1,0 +1,295 @@
+Instance:	tai20a
+Attempts:	10
+Solution construction approach: totally random 
+Stop criterion:	results considering optimal solution acquisition
+Execution time: 5957    milliseconds
+Cost:           703482
+Iteration:      26586
+Solution:
+9 8 11 19 18 2 13 5 16 10 4 6 14 15 17 1 3 7 12 0
+
+
+Instance:	tai20a
+Attempts:	100
+Solution construction approach: totally random 
+Stop criterion:	results considering optimal solution acquisition
+Execution time: 6241    milliseconds
+Cost:           703482
+Iteration:      28166
+Solution:
+9 8 11 19 18 2 13 5 16 10 4 6 14 15 17 1 3 7 12 0
+
+
+Instance:	tai20a
+Attempts:	10
+Solution construction approach: quadratic construction based on intensity matrix updated by += 1 for each local optimum. Initial matrix values = 10 
+Stop criterion:	results considering optimal solution acquisition
+Execution time: 4438    milliseconds
+Cost:           703482
+Iteration:      19365
+Solution:
+9 8 11 19 18 2 13 5 16 10 4 6 14 15 17 1 3 7 12 0
+
+
+Instance:	tai20a
+Attempts:	32
+Solution construction approach: quadratic construction based on intensity matrix multiplied by cost / (costSum / hashCodes.size()) for new each local optimum, Rest on construction collision
+Stop criterion:	results considering optimal solution acquisition
+Execution time: 6868    milliseconds
+Iteration:      32362
+Cost:           703482
+Solution:
+9 8 11 19 18 2 13 5 16 10 4 6 14 15 17 1 3 7 12 0
+
+
+Instance:	tai20a
+Attempts:	32
+Solution construction approach: quadratic construction based on intensity matrix multiplied by cost / (costSum / hashCodes.size()) for new each local optimum Reset on both collisions
+Stop criterion:	results considering optimal solution acquisition
+Execution time: 5603    milliseconds
+Iteration:      25123
+Cost:           703482
+Solution:
+9 8 11 19 18 2 13 5 16 10 4 6 14 15 17 1 3 7 12 0
+
+
+Instance:	tai20a
+Attempts:	100
+Solution construction approach: quadratic construction based on intensity matrix multiplied by cost / (costSum / hashCodes.size()) for new each local optimum Reset on both collisions
+Stop criterion:	results considering optimal solution acquisition
+Execution time: 4490    milliseconds
+Iteration:      20652
+Cost:           703482
+Solution:
+9 8 11 19 18 2 13 5 16 10 4 6 14 15 17 1 3 7 12 0
+
+
+
+FANT	tai20a	100 attempts
+-----------------------------------[AVERAGE]------------------------------------
+Duration:       18785   milliseconds
+Iteration:      236685
+Cost:           703482
+Time:           Fri Feb 17 20:46:32 2012
+Solution:       [ 9 8 11 19 18 2 13 5 16 10 4 6 14 15 17 1 3 7 12 0 ]
+________________________________________________________________________________
+
+
+
+TABU SEARCH with aspiration	1000 attempts	tai20a
+-----------------------------------[AVERAGE]-------------------------
+Duration:       759     milliseconds
+Iteration:      63661
+Cost:           703482
+Time:           Sun Feb 19 13:57:52 2012
+Solution:       [ 9 8 11 19 18 2 13 5 16 10 4 6 14 15 17 1 3 7 12 0 ]
+
+
+TABU SEARCH without	aspiration 1000 attempts	tai20a
+-----------------------------------[AVERAGE]-------------------------
+Duration:       760     milliseconds
+Iteration:      64951
+Cost:           703482
+Time:           Sun Feb 19 14:12:58 2012
+Solution:       [ 9 8 11 19 18 2 13 5 16 10 4 6 14 15 17 1 3 7 12 0 ]
+_____________________________________________________________________
+Press any key to continue . . .
+
+
+
+My2	1000 attempts	tai20a
+-----------------------------------[AVERAGE]-------------------------
+Duration:       2834    milliseconds
+Iteration:      20201
+Cost:           703482
+Time:           Sun Feb 19 16:25:32 2012
+Solution:       [ 9 8 11 19 18 2 13 5 16 10 4 6 14 15 17 1 3 7 12 0 ]
+
+
+
+TABU SEACRH after improvement
+-----------------------------------[AVERAGE]--------------------------
+Duration:       788     milliseconds
+Iteration:      70933
+Cost:           703482
+Time:           Sun Feb 19 19:29:38 2012
+Solution:       [ 9 8 11 19 18 2 13 5 16 10 4 6 14 15 17 1 3 7 12 0 ]
+
+
+TABU SEACRH after second improvement
+-----------------------------------[AVERAGE]--------------------------
+Duration:       725     milliseconds
+Iteration:      64929
+Cost:           703482
+Time:           Sun Feb 19 19:44:50 2012
+Solution:       [ 9 8 11 19 18 2 13 5 16 10 4 6 14 15 17 1 3 7 12 0 ]
+
+
+TABU SEACRH  - tabu list of swaps instead of assignments. Tabu length = 2 * size;
+-----------------------------------[AVERAGE]---------------------------
+Duration:       599     milliseconds
+Iteration:      58648
+Cost:           703482
+Time:           Sun Feb 19 21:02:35 2012
+Solution:       [ 9 8 11 19 18 2 13 5 16 10 4 6 14 15 17 1 3 7 12 0 ]
+
+
+Slight improvement
+-----------------------------------[AVERAGE]--------------------------
+Duration:       593     milliseconds
+Iteration:      58995
+Cost:           703482
+Time:           Sun Feb 19 21:29:03 2012
+Solution:       [ 9 8 11 19 18 2 13 5 16 10 4 6 14 15 17 1 3 7 12 0 ]
+
+
+Same but woithout srand(time)
+Duration:       625     milliseconds
+Iteration:      61537
+Cost:           703482
+Time:           Mon Feb 20 00:32:05 2012
+Solution:       [ 9 8 11 19 18 2 13 5 16 10 4 6 14 15 17 1 3 7 12 0 ]
+
+
+
+if ( (tabu[i][j] < iteration || cost + deltas[i][j] < best.cost) && deltas[i][j] < minDelta )
+without srand
+-----------------------------------[AVERAGE]------------------------------------
+Duration:       661     milliseconds
+Iteration:      62715
+Cost:           703482
+Time:           Mon Feb 20 13:55:27 2012
+Solution:       [ 9 8 11 19 18 2 13 5 16 10 4 6 14 15 17 1 3 7 12 0 ]
+
+with srand
+----------------------------------[AVERAGE]--------------------------
+uration:       696     milliseconds
+teration:      66186
+ost:           703482
+ime:           Mon Feb 20 14:08:52 2012
+olution:       [ 9 8 11 19 18 2 13 5 16 10 4 6 14 15 17 1 3 7 12 0 ]
+
+
+WITHOUT cube()
+-----------------------------------[AVERAGE]------------------------------------
+Duration:       558     milliseconds
+Iteration:      52503
+Cost:           703482
+Time:           Mon Feb 20 14:33:20 2012
+Solution:       [ 9 8 11 19 18 2 13 5 16 10 4 6 14 15 17 1 3 7 12 0 ]
+
+- int(size * i + j) removed
+Duration:       555     milliseconds
+Iteration:      51107
+Cost:           703482
+Time:           Mon Feb 20 14:42:14 2012
+Solution:       [ 9 8 11 19 18 2 13 5 16 10 4 6 14 15 17 1 3 7 12 0 ]
+
+tabu_duration = size;
+Duration:       491     milliseconds
+Iteration:      46207
+Cost:           703482
+Time:           Mon Feb 20 14:55:53 2012
+Solution:       [ 9 8 11 19 18 2 13 5 16 10 4 6 14 15 17 1 3 7 12 0 ]
+
+Defer reverse swap minimum for 2 iterations
+Duration:       481     milliseconds
+Iteration:      45194
+Cost:           703482
+Time:           Mon Feb 20 15:11:32 2012
+Solution:       [ 9 8 11 19 18 2 13 5 16 10 4 6 14 15 17 1 3 7 12 0 ]
+
+deltas[iMin][jMin] *= -1;
+Duration:       469     milliseconds 
+
+
+
+updateJointDeltas. Reference & used
+-----------------------------------[AVERAGE]-------------------------
+Duration:       418     milliseconds
+Iteration:      42605
+Cost:           703482
+Time:           Tue Feb 21 20:28:02 2012
+Solution:       [ 9 8 11 19 18 2 13 5 16 10 4 6 14 15 17 1 3 7 12 0 ]
+
+references removed. T = double
+-----------------------------------[AVERAGE]--------------------------
+Duration:       400     milliseconds
+Iteration:      44674
+Cost:           703482
+Time:           Tue Feb 21 23:32:39 2012
+Solution:       [ 9 8 11 19 18 2 13 5 16 10 4 6 14 15 17 1 3 7 12 0 ]
+
+
+
+sko81 QAP instance:
+
+Duration:       299971  milliseconds
+Iteration:      1965405
+Cost:           91010
+Time:           Wed Feb 22 00:14:45 2012
+Solution:       [ 29 24 73 32 60 2 55 65 49 66 3 80 37 27 40 5 30 47 68 64 13 34
+ 48 20 35 16 8 22 25 38 18 14 6 41 69 77 33 19 11 17 1 43 10 44 56 75 63 50 36 3
+1 12 45 51 67 59 62 78 57 15 0 4 61 26 79 76 23 74 72 58 21 28 71 46 39 53 9 52
+42 70 54 7 ]
+
+
+
+
+TAILLARD TABU SEARCH RESULTS on tai20a 1000 attempts
+-----------------------------------[AVERAGE]------------------------------------
+Duration:       764     milliseconds
+Iteration:      66110
+Cost:           703482
+Time:           Wed Feb 22 20:32:05 2012
+Solution:       [ 9 8 11 19 18 2 13 5 16 10 4 6 14 15 17 1 3 7 12 0 ]
+________________________________________________________________________________
+
+
+
+MY TABU SEARCH RESULTS on tai20a 1000 attempts	typename=double
+-----------------------------------[AVERAGE]------------------------------------
+Duration:       409     milliseconds
+Iteration:      47357
+Cost:           703482
+Time:           Wed Feb 22 22:15:17 2012
+Solution:       [ 9 8 11 19 18 2 13 5 16 10 4 6 14 15 17 1 3 7 12 0 ]
+________________________________________________________________________________
+
+
+
+MY TABU SEARCH RESULTS on tai20a 1000 attempts	typename=int
+-----------------------------------[AVERAGE]------------------------------------
+Duration:       450     milliseconds
+Iteration:      47357
+Cost:           703482
+Time:           Wed Feb 22 22:07:30 2012
+Solution:       [ 9 8 11 19 18 2 13 5 16 10 4 6 14 15 17 1 3 7 12 0 ]
+
+
+TAILLARD FANT	tai20a	100 attempts
+-----------------------------------[AVERAGE]------------------------------------
+Duration:       18860   milliseconds
+Iteration:      236685
+Cost:           703482
+Time:           Fri Feb 24 01:49:03 2012
+Solution:       [ 9 8 11 19 18 2 13 5 16 10 4 6 14 15 17 1 3 7 12 0 ]
+________________________________________________________________________________
+
+
+TAILLARD	SIMULATING ANNEALING	tai20a	100 attempts
+-----------------------------------[AVERAGE]------------------------------------
+Duration:       3295    milliseconds
+Iteration:      14736724
+Cost:           704088
+Time:           Fri Feb 24 02:28:50 2012
+Solution:       [ 9 8 11 19 18 2 13 5 16 10 4 6 14 15 17 1 3 7 12 0 ]
+
+
+MY TABU SEARCH - FORMULA REDUCED	tai20a	1000 attempts
+-----------------------------------[AVERAGE]--------------------------
+Duration:       327     milliseconds
+Iteration:      47357
+Cost:           703482
+Time:           Sun Feb 26 03:36:43 2012
+Solution:       [ 9 8 11 19 18 2 13 5 16 10 4 6 14 15 17 1 3 7 12 0 ]
