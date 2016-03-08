@@ -1,0 +1,16 @@
+# This is sharp comment
+
+/* This is slash comment */
+
+parameter_name = parameter value;
+
+section_name section value
+{
+	parameter = "Some chars: \", \', \n, \t, \\ ";
+	
+	section_name section value
+	{
+		#	Comment
+		parameter= "Some chars: \", \', \n, \t, \\ ";
+	}
+}

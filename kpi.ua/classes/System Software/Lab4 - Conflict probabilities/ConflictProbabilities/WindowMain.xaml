@@ -1,0 +1,14 @@
+﻿<Window x:Class="ConflictProbabilities.WindowMain"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:my="clr-namespace:Visifire.Charts;assembly=WPFVisifire.Charts"
+    Title="Podolsky Sergey KV-64" Height="300" Width="490" WindowState="Maximized">
+    <Grid>
+        <my:Chart Margin="0,0,0,43" Name="chart" Watermark="False" ScrollingEnabled="False">
+            <my:Chart.Titles>
+                <my:Title InternalPadding="0" Text="Conflict probability" />
+            </my:Chart.Titles>
+        </my:Chart>
+        <Button Height="23" HorizontalAlignment="Right" Name="button" VerticalAlignment="Bottom" Width="75" Margin="0,0,14,9" Click="button_Click">Refresh</Button>
+    </Grid>
+</Window>
