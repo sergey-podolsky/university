@@ -1,0 +1,20 @@
+<Grammar> -> <row-list>
+<row-list> -> <row>
+<row-list> -> <row> <row-list>
+<row> -> <left> = <int-value> ;
+<row> -> <left> = <bool-value> ;
+<row> -> <left> : <int> = <int-value> ;
+<row> -> <left> : boolean = <bool-value> ;
+<int> -> byte | word | integer | longint
+<int-value> -> <digit>
+<int-value> -> <digit> <int-value>
+<digit> -> 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
+<left> -> <variable>
+<left> -> <variable> , <left>
+<variable> -> <letter> <variable-tail>
+<variable-tail> -> E
+<variable-tail> -> <digit> <variable-tail>
+<variable-tail> -> <letter> <variable-tail>
+<bool-value> -> TRUE | FALSE
+
+

@@ -1,0 +1,6 @@
+<G> -> <ABC>
+<ABC> -> <B>
+<ABC> -> A <ABC>
+<ABC> -> <ABC> C
+<B> -> E
+<B> -> B <B>

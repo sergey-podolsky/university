@@ -1,0 +1,13 @@
+PROGRAM sample;
+BEGIN
+
+
+
+		FOR i := 1 TO -4+20+i DO
+			FOR j := 2 TO 42 DO
+
+			ENDFOR;
+		ENDFOR;
+
+	(*comment*)
+END.

@@ -1,0 +1,14 @@
+PROGRAM sample;
+BEGIN
+	LOOP
+
+	ENDLOOP;
+
+
+	
+	FOR i := 1 TO -4+20+i DO
+
+	ENDFOR;
+
+	(*comment*)
+END.
