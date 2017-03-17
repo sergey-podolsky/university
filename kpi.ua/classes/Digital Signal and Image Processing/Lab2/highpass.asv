@@ -1,0 +1,23 @@
+function Hd = highpass( input_args )
+%HIGHPASS Returns a discrete-time filter object.
+%   Detailed explanation goes here
+
+Fsamp = 44100;      % Sampling Frequency
+Fnyq = Fsamp / 2;   % Nyquist frequency
+
+Fst = 7650;     % Stopband Frequency
+Fp = 7700;      % Passband Frequency
+
+Wp = Fp / Fnyq;     % Normalized passband frequency
+Ws = Fst / Fnyq;	% Normalized stopband frequency
+
+Rp = 1;         % Passband Ripple (dB)
+Rs = 80;        % Stopband Attenuation (dB)
+
+[n, Wp] = ellipord(Wp, Ws, Rp, Rs);	% n - order; Ws - cutoff frequency
+[z,p,k] = ellip(n,Rp,Rs,Wp);         % Filter coefficients
+
+
+
+end
+

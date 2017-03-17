@@ -1,0 +1,34 @@
+imgRGB = imread('image.jpg');
+img = rgb2gray(img);
+imshow(img)
+
+test_fft1=fft2(im2double(img));
+imshow(test_fft1)
+
+x = ifft2(test_fft1);
+imshow(x)
+
+[cA1,cH1,cV1,cD1]=dwt2(img,'sym2');     % Symplets
+[cA2,cH2,cV2,cD2]=dwt2(img,'coif1');    % Coiflets
+[cA3,cH3,cV3,cD3]=dwt2(img,'haar'); 
+
+% Symplets
+figure,
+subplot(221), imshow(cA1), title('Respectively')
+subplot(222), imshow(cH1), title('Horizontal')
+subplot(223), imshow(cV1), title('Vertical')
+subplot(224), imshow(cD1), title('Diagonal')
+
+% Coiflets
+figure,
+subplot(221), imshow(cA2), title('Respectively')
+subplot(222), imshow(cH2), title('Horizontal')
+subplot(223), imshow(cV2), title('Vertical')
+subplot(224), imshow(cD2), title('Diagonal')
+
+% Haar
+figure,
+subplot(221), imshow(cA3), title('Respectively')
+subplot(222), imshow(cH3), title('Horizontal')
+subplot(223), imshow(cV3), title('Vertical')
+subplot(224), imshow(cD3), title('Diagonal')

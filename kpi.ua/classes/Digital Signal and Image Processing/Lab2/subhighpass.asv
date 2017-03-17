@@ -1,0 +1,33 @@
+function Hd = subhighpass
+%SUBHIGHPASS Returns a discrete-time filter object.
+
+Fsamp = 44100;      % Sampling Frequency
+Fnyq = Fsamp / 2;   % 
+
+Fst1 = 7650;    
+Fp1 = 7700;     % Passband Frequency
+Fp2 = 14900;
+Fst2 = 14950;
+
+Wp = [ Fp1 Fp2 ] / Fnyq;
+Ws = [ Fst1 Fst2 ] / Fnyq;
+
+Rp = 1;
+Rs = 80;
+
+[n, Ws] = cheb2ord(Wp, Ws, Rp, Rs); %Ws cutoff frequencies Ws
+
+% Show that there is no 'cheby2' design method in any specification with N
+% designmethods(fdesign.bandpass('Fst1,Fp1,Fp2,Fst2,Ast1,Ap,Ast2'))
+% designmethods(fdesign.bandpass('N,F3dB1,F3dB2'))
+% designmethods(fdesign.bandpass('N,Fc1,Fc2'))
+% designmethods(fdesign.bandpass('N,Fc1,Fc2,Ast1,Ap,Ast2'))
+% designmethods(fdesign.bandpass('N,Fp1,Fp2,Ap'))
+% designmethods(fdesign.bandpass('N,Fp1,Fp2,Ast1,Ap,Ast2'))
+% designmethods(fdesign.bandpass('N,Fst1,Fp1,Fp2,Fst2'))
+% designmethods(fdesign.bandpass('N,Fst1,Fp1,Fp2,Fst2,Ap'))
+
+n = 2 * round(n / 2); % Nearest greater even integer
+d = fdesign.bandpass('N,F3dB1,F3dB2', n, Ws(1), Ws(2));
+%designmethods(d, 'full')
+Hd = design(d); %Hd = design(d, 'cheby2');  % 'cheby2' is invalid method

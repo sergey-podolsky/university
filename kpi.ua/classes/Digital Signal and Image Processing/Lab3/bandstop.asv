@@ -1,0 +1,17 @@
+function Hd = bandstop( Fsamp, window )
+%BANDSTOP Returns a discrete-time filter object.
+%   Detailed explanation goes here
+
+if nargin < 1       % If there is no input arguments
+    Fsamp = 44100;  % Sampling Frequency
+end
+
+Fnyq = Fsamp / 2;   % Nyquist Frequency
+
+Fpass = 700;        % Passband Frequency
+Fstop = 7000;       % Stopband Frequency
+
+Wn(1) = 
+
+end
+

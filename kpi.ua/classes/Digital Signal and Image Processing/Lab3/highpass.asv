@@ -1,0 +1,23 @@
+function Hd = highpass( Fsamp )
+%HIGHPASS Returns a discrete-time filter object.
+%   Detailed explanation goes here
+
+if nargin < 1       % If there is no input arguments
+    Fsamp = 44100;  % Sampling Frequency
+end
+      
+Fnyq = Fsamp / 2;   % Nyquist frequency
+Fp = 16000;         % Passband Frequency
+Wn = Fp / Fnyq;     % Normalized passband frequency
+
+Rp = 1;         % Passband Ripple (dB)
+Rs = 80;        % Stopband Attenuation (dB)
+
+fOrder = 127;   % Filter order
+num = fir1(fOrder, Wn, 'high'); % Filter numerator coefficients
+
+Hd = dfilt.dffir(num);  % Create a dfilt object
+hanning
+
+end
+
