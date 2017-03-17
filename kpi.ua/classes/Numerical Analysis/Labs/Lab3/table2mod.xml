@@ -1,0 +1,39 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:MainDataTable="dataTable" msdata:UseCurrentLocale="true">
+      <xs:complexType>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="dataTable">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="X_x005B_0_x005D_" type="xs:double" default="1" />
+                <xs:element name="X_x005B_1_x005D_" type="xs:double" default="1" />
+                <xs:element name="X_x005B_2_x005D_" type="xs:double" default="1" />
+                <xs:element name="_x003D_" type="xs:double" default="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <dataTable>
+    <X_x005B_0_x005D_>4.5</X_x005B_0_x005D_>
+    <X_x005B_1_x005D_>1.5</X_x005B_1_x005D_>
+    <X_x005B_2_x005D_>0.5</X_x005B_2_x005D_>
+    <_x003D_>3</_x003D_>
+  </dataTable>
+  <dataTable>
+    <X_x005B_0_x005D_>4</X_x005B_0_x005D_>
+    <X_x005B_1_x005D_>2</X_x005B_1_x005D_>
+    <X_x005B_2_x005D_>1</X_x005B_2_x005D_>
+    <_x003D_>1</_x003D_>
+  </dataTable>
+  <dataTable>
+    <X_x005B_0_x005D_>1</X_x005B_0_x005D_>
+    <X_x005B_1_x005D_>1</X_x005B_1_x005D_>
+    <X_x005B_2_x005D_>1</X_x005B_2_x005D_>
+    <_x003D_>0</_x003D_>
+  </dataTable>
+</NewDataSet>
