@@ -1,0 +1,9 @@
+%% DFIELD file %%
+
+H.name = 'dfield equation';
+H.xname = 'v';
+H.tname = 't';
+H.der = 'g-k*v';
+H.wind = [0   10    0  600];
+H.pname = {'g','v(0)','k',''};
+H.pval = {'9.8','0','0.93458',''};

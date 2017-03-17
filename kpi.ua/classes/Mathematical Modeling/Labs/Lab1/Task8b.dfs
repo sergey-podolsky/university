@@ -1,0 +1,9 @@
+%% DFIELD file %%
+
+H.name = 'Task8b';
+H.xname = 'P';
+H.tname = 't';
+H.der = 'd * P * (2 * P0 - P )  / P0^2';
+H.wind = [0     100       0  200000];
+H.pname = {'d','','P0',''};
+H.pval = {'1000','','100000',''};

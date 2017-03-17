@@ -1,0 +1,9 @@
+%% DFIELD file %%
+
+H.name = 'u''';
+H.xname = 'u';
+H.tname = 't';
+H.der = '- k * u + k * (a0 + a1 * cos((pi / 11) * t) + b1 * sin((pi / 11) * t))';
+H.wind = [0  50   0  45];
+H.pname = {'k','a1','a0','b1'};
+H.pval = {'0.2','6*cos(5 * pi / 11)','21','6*sin(5 * pi / 11)'};

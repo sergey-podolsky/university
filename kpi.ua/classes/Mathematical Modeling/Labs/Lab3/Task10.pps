@@ -1,0 +1,12 @@
+%% PPLANE file %%
+
+H.name = 'Task10.pps';
+H.xvar = 'x';
+H.yvar = 'y';
+H.xder = '3*x-2*x^2-1/5*x*y';
+H.yder = '3*x*y-2*y';
+H.pname = {'','','','','',''};
+H.pval = {'','','','','',''};
+H.fieldtype = 'arrows';
+H.npts = 20;
+H.wind = [0   4   0  16];

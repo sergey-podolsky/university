@@ -1,0 +1,9 @@
+%% DFIELD file %%
+
+H.name = 'Task2';
+H.xname = 'y';
+H.tname = 'x';
+H.der = '1 + x + y + x * y';
+H.wind = [-4    4 -100  100];
+H.pname = {'','','',''};
+H.pval = {'','','',''};
