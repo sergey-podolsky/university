@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://localhost/SortService.asmx/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://localhost/SortService.asmx/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Podolsky Sergey KV-64</wsdl:documentation>
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://localhost/SortService.asmx/">
+      <s:element name="SortMatrix">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="matrix" type="tns:ArrayOfBase64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfBase64Binary">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="base64Binary" nillable="true" type="s:base64Binary" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SortMatrixResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="matrix" type="tns:ArrayOfBase64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="SortMatrixSoapIn">
+    <wsdl:part name="parameters" element="tns:SortMatrix" />
+  </wsdl:message>
+  <wsdl:message name="SortMatrixSoapOut">
+    <wsdl:part name="parameters" element="tns:SortMatrixResponse" />
+  </wsdl:message>
+  <wsdl:portType name="SortServiceSoap">
+    <wsdl:operation name="SortMatrix">
+      <wsdl:input message="tns:SortMatrixSoapIn" />
+      <wsdl:output message="tns:SortMatrixSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SortServiceSoap" type="tns:SortServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SortMatrix">
+      <soap:operation soapAction="http://localhost/SortService.asmx/SortMatrix" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SortServiceSoap12" type="tns:SortServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SortMatrix">
+      <soap12:operation soapAction="http://localhost/SortService.asmx/SortMatrix" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SortService">
+    <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Podolsky Sergey KV-64</wsdl:documentation>
+    <wsdl:port name="SortServiceSoap" binding="tns:SortServiceSoap">
+      <soap:address location="http://localhost:7017/SortService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="SortServiceSoap12" binding="tns:SortServiceSoap12">
+      <soap12:address location="http://localhost:7017/SortService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
