@@ -1,0 +1,9 @@
+CLS
+@ECHO OFF
+
+ECHO Loading MOUSE.COM ...
+MOUSE.COM
+
+ECHO Loading VC.COM ...
+VC.COM
+
